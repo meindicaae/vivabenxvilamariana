@@ -33,6 +33,7 @@ function handleSubmit(event) {
 
     fetch('https://api.sheetmonkey.io/form/eq6HsrSoaM9oFxP9531Lae', {
         method: 'post',
+        mode: 'cors',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
