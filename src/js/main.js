@@ -36,8 +36,7 @@ function handleSubmit(event) {
         mode: 'cors',
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': 'https://meindicaae.netlify.app',
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(
             {
@@ -53,7 +52,9 @@ function handleSubmit(event) {
                 indicandoprofissional: indicandoprofissionalinput,
             }
         )
-    });
+    }).then(
+        alert('profissional cadastrado!')
+    );
 }
 
 document.querySelector('form').addEventListener('submit', handleSubmit);
