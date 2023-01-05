@@ -57,4 +57,4 @@ function handleSubmit(event) {
     );
 }
 
-document.querySelector('form').addEventListener('submit', handleSubmit);
+// document.querySelector('form').addEventListener('submit', handleSubmit);

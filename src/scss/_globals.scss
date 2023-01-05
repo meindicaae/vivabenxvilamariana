@@ -58,6 +58,11 @@ a {
 	&:hover {
 		color: inherit;
 	}
+	&.btn {
+		height: auto;
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
 }
 ul,
 li {
@@ -97,6 +102,12 @@ li {
 .btn {
 	font-weight: 600;
 	font-size: 1.1em;
+}
+.sucesso {
+	.box {
+		min-height: auto;
+		height: auto;
+	}
 }
 
 /*
