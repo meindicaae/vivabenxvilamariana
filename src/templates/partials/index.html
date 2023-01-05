@@ -3,7 +3,7 @@
     <section>
         <div class="container">
             <div class="row justify-content-center vh-100">
-                <div class="col-lg-6 col-md-9 col-sm-12 col-12 align-self-center">
+                <div class="col-xl-6 col-lg-7 col-md-9 col-sm-12 col-12 align-self-center">
                     <div class="box text-center">
                         <img src="images/logo-benx-vlm.png" class="logo-parceiro">
                         <img src="images/logo.jpg" class="logo" alt="Me Indica Aê :: Indicações de Prestadores de Serviços para o Condomínio" data-toggle="tooltip" data-placement="bottom" title="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio">
@@ -16,18 +16,18 @@
                             <div class="form-row my-4">
                                 <!-- nome -->
                                 <div class="form-group col-md-12">
-                                    <label for="nome">Nome do morador</label>
-                                    <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
+                                    <label for="nomemorador">Nome do morador</label>
+                                    <input type="text" class="form-control" id="nomemorador" name="nomemorador" placeholder="Digite seu nome">
                                 </div>
                                 <!-- celular -->
                                 <div class="form-group col-md-6">
-                                    <label for="celular">Celular <small>(opcional)</small></label>
-                                    <input type="text" class="form-control celular" id="celular" placeholder="(XX) 00000-0000">
+                                    <label for="celularmorador">Celular <small>(opcional)</small></label>
+                                    <input type="text" class="form-control celular" id="celularmorador" name="celularmorador" placeholder="(XX) 00000-0000">
                                 </div>
                                 <!-- apto -->
                                 <div class="form-group col-md-6">
-                                    <label for="apto">Nº apto</label>
-                                    <input type="number" class="form-control" id="apto" placeholder="0000" required>
+                                    <label for="aptomorador">Nº apto</label>
+                                    <input type="number" class="form-control" id="aptoaptomorador" name="aptomorador" placeholder="0000">
                                 </div>
                             </div>
                             
@@ -36,40 +36,39 @@
                                 <h2>Dados do(a) profissional</h2>
                                 <!-- nome -->
                                 <div class="form-group col-md-12">
-                                    <label for="nomefantasia">Nome da empresa ou profissional</label>
-                                    <input type="text" class="form-control" id="nomefantasia" placeholder="Digite o nome">
+                                    <label for="nomeprofissional">Nome da empresa ou profissional</label>
+                                    <input type="text" class="form-control" id="nomeprofissional" name="nomeprofissional" placeholder="Digite o nome">
                                 </div>
                                 <!-- categoria -->
                                 <div class="form-group col-md-6">
-                                    <label for="profissao">Profissão</label>
-                                    <select class="form-control" id="profissao" required>
+                                    <label for="categoriaprofissional">Profissão</label>
+                                    <select class="form-control" id="categoriaprofissional" name="categoriaprofissional">
                                         <option>Escolha..</option>
-                                        <option>Pintor</option>
-                                        <option>Designer de Interiores</option>
-                                        <option>Arquiteto</option>
-                                        <option>Eletricista</option>
+                                        <option value="pintor">Pintor</option>
+                                        <option value="designerdeinteriores">Designer de Interiores</option>
+                                        <option value="arquiteto">Arquiteto</option>
+                                        <option value="eletricista">Eletricista</option>
                                     </select>
                                 </div>
                                 <!-- celular -->
                                 <div class="form-group col-md-6">
                                     <label for="celularprofissional">Celular</label>
-                                    <input type="text" class="form-control celular" id="celularprofissional" placeholder="(XX) 00000-0000" required>
+                                    <input type="text" class="form-control celular" id="celularprofissional" name="celularprofissional" placeholder="(XX) 00000-0000">
                                 </div>
                                 <!-- email -->
                                 <div class="form-group col-md-6">
                                     <label for="emailprofissional">E-mail <small>(opcional)</small></label>
-                                    <input type="email" class="form-control" id="emailprofissional" placeholder="Digite o e-mail">
+                                    <input type="email" class="form-control" id="emailprofissional" name="emailprofissional" placeholder="Digite o e-mail">
                                 </div>
                                 <!-- site / instagram / twitter -->
                                 <div class="form-group col-md-6">
                                     <label for="siteprofissional">Site | Insta | Twitter <small>(opcional)</small></label>
-                                    <input type="url" class="form-control" id="siteprofissional" placeholder="Digite o site ou rede social">
+                                    <input type="url" class="form-control" id="siteprofissional" name="siteprofissional" placeholder="Digite o site ou rede social">
                                 </div>
                                 <!-- porque estou indicando -->
                                 <div class="form-group col-md-12">
-                                    <label for="porqueestouindicando">Porquê estou compartilhando?</label>
-                                    <!-- <input type="text" class="form-control" id="porqueestouindicando" placeholder="Digite o site ou rede social"> -->
-                                    <textarea class="form-control" id="porqueestouindicando" rows="5" placeholder="Conte pra gente de forma resumida um pouquinho das experiências que teve com o(a) profissional."></textarea>
+                                    <label for="indicandoprofissional">Porquê estou compartilhando?</label>
+                                    <textarea class="form-control" id="indicandoprofissional" name="indicandoprofissional" rows="5" placeholder="Conte pra gente de forma resumida um pouquinho das experiências que teve com o(a) profissional."></textarea>
                                 </div>
                             </div>
 
