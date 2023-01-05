@@ -52,8 +52,8 @@ function handleSubmit(event) {
                 indicandoprofissional: indicandoprofissionalinput,
             }
         )
-    }).then(
-        alert('profissional cadastrado!')
+    }).finally(
+        window.location.href = ("http://www.w3schools.com")
     );
 }
 
