@@ -1,0 +1,60 @@
+/*
+####################################################
+COMPONENTS
+####################################################	
+*/
+
+label {
+    font-size: 0.8em;
+}
+
+.form-control {
+    border: 0 none;
+    border-bottom: 2px solid $third;
+    border-radius: 0;
+    outline: none;
+    padding-left: 0;
+    padding-right: 0;
+    color: $black;
+}
+
+.form-control:focus{ 
+    border-color: inherit !important; 
+    -webkit-box-shadow: none !important; 
+    box-shadow: none !important; 
+}
+
+[role=button], a, area, button, input, label, select, summary, textarea {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent
+}
+input:focus:-moz-placeholder {
+    color: transparent
+}
+input:focus::-moz-placeholder {
+    color: transparent
+}
+input:focus:-ms-input-placeholder {
+    color: transparent
+}
+textarea:focus::-webkit-input-placeholder {
+    color: transparent
+}
+textarea:focus:-moz-placeholder {
+    color: transparent
+}
+textarea:focus::-moz-placeholder {
+    color: transparent
+}
+textarea:focus:-ms-input-placeholder {
+    color: transparent
+}
+
+.btn {
+    height: 50px;
+    border-radius: 30px;
+}

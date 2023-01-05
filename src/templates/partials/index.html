@@ -1,0 +1,77 @@
+    {% include "partials/elements/header.html" %}
+
+    <section>
+        <div class="container">
+            <div class="row justify-content-center vh-100">
+                <div class="col-lg-6 col-md-8 col-sm-12 col-12 align-self-center">
+                    <div class="box text-center">
+                        <img src="images/logo.jpg" class="logo" alt="Me Indica Aê :: Indicações de Prestadores de Serviços para o Condomímio" title="Me Indica Aê :: Indicações de Prestadores de Serviços para o Condomímio">
+                        <h1>Me Indica Aê!</h1>
+                        <p>Sabe aquele seu pedreiro de confiança ou pintor que deixou seu studio nos trincks!? <strong>Me Indica aê!</strong></p>
+
+                        <form class="text-left my-4" action="">
+
+                            <!-- dados do morador -->
+                            <div class="form-row my-4">
+                                <!-- razão social -->
+                                <div class="form-group col-md-12">
+                                    <label for="nome">Nome do morador</label>
+                                    <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
+                                </div>
+                                <!-- celular -->
+                                <div class="form-group col-md-6">
+                                    <label for="celular">Celular</label>
+                                    <input type="text" class="form-control" id="celular" placeholder="(XX) 00000-0000">
+                                </div>
+                                <!-- apto -->
+                                <div class="form-group col-md-6">
+                                    <label for="apto">Nº apto</label>
+                                    <input type="number" class="form-control" id="apto" placeholder="312">
+                                </div>
+                            </div>
+                            
+                            <!-- dados do profissional -->
+                            <div class="form-row my-4">
+                                <h2>Contato do(a) profissional</h2>
+                                <!-- nome -->
+                                <div class="form-group col-md-6">
+                                    <label for="nomefantasia">Nome Fantasia / Razão Social</label>
+                                    <input type="text" class="form-control" id="nomefantasia" placeholder="Digite o Nome Fantasia">
+                                </div>
+                                <!-- celular -->
+                                <div class="form-group col-md-6">
+                                    <label for="celularprofissional">Celular</label>
+                                    <input type="number" class="form-control" id="celularprofissional" placeholder="(XX) 00000-0000">
+                                </div>
+                                <!-- email -->
+                                <div class="form-group col-md-6">
+                                    <label for="emailprofissional">E-mail</label>
+                                    <input type="email" class="form-control" id="emailprofissional" placeholder="Digite o e-mail">
+                                </div>
+                                <!-- site / instagram / twitter -->
+                                <div class="form-group col-md-6">
+                                    <label for="siteprofissional">Site | Insta | Twitter</label>
+                                    <input type="url" class="form-control" id="siteprofissional" placeholder="Digite o site ou rede social">
+                                </div>
+                                <!-- porque estou indicando -->
+                                <div class="form-group col-md-12">
+                                    <label for="porqueestouindicando">Porquê estou compartilhando?</label>
+                                    <!-- <input type="text" class="form-control" id="porqueestouindicando" placeholder="Digite o site ou rede social"> -->
+                                    <textarea class="form-control" id="porqueestouindicando" rows="5" placeholder="Nos diga um pouquinho das experiências que teve com o(a) profissional."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- submit -->
+                            <div class="form-row my-4">
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <span>Quero indicar!</span>
+                                </button>
+                            </div>
+                        </form>
+
+                        <a href="" class="mt-5 d-block"><b>Ver profissionais</b></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
