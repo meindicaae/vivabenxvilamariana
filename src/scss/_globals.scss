@@ -50,6 +50,7 @@ footer {
 }
 .container {
 	padding: 0;
+	position: relative;
 }
 a {
 	color: inherit;
@@ -76,13 +77,21 @@ li {
 	border-radius: 30px;
 	background-color: $white;
 	box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.1);
+	position: relative;
 }
 .logo {
 	width: 50px;
 }
+.logo-parceiro {
+	position: absolute;
+	top: 32px;
+	right: 20px;
+	width: 80px;
+}
 .btn-primary {
 	// background-color: #6F3FFA;
-	background-image: linear-gradient(to right top, #8743ff, #783ffc, #693cf8, #5739f5, #4136f1);
+	// background-image: linear-gradient(to right top, #8743ff, #783ffc, #693cf8, #5739f5, #4136f1);
+	background-image: linear-gradient(to right, #0aa281, #38a488, #51a68e, #65a895, #77aa9b);
 	border: 0 none;
 }
 .btn {
