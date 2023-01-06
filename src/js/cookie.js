@@ -2,14 +2,14 @@ window.cookieconsent.initialise({
 	container: document.getElementById("cookieconsent"),
 	palette: {
 		popup: {
-			background: "#fbfbfb",
+			background: "#FBFCFC",
 			text: "#333",
 			link: "#010066",
 		},
 		button: {
-			background: "#84d171",
+			background: "#0AA281",
 			border: "transparent",
-			text: "#010066",
+			text: "#FFF",
 		},
 		highlight: {
 			background: "#333",
@@ -24,7 +24,7 @@ window.cookieconsent.initialise({
 		deny: "Recursar",
 		dismiss: "Concordo",
 		link: "Saiba mais",
-		href: "https://cba.com.br/cba/politica-de-privacidade",
+		href: "https://www.mpf.mp.br/servicos/lgpd/politicas/politicas-de-cookies",
 		policy: "Política de Cookie",
 	},
 	revokable: true,
@@ -33,5 +33,5 @@ window.cookieconsent.initialise({
 	  'enable cookies' : 'disable cookies');
 	},
 	// "theme": "edgeless",
-	position: "bottom"
+	position: "bottom-right"
 });
