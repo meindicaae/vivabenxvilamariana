@@ -6,7 +6,9 @@
                 <div class="col-xl-6 col-lg-7 col-md-9 col-sm-12 col-12 align-self-center">
                     <div class="box text-center">
                         <img src="images/logo-benx-vlm.png" class="logo-parceiro">
-                        <img src="images/logo.jpg" class="logo" alt="Me Indica Aê :: Indicações de Prestadores de Serviços para o Condomínio" data-toggle="tooltip" data-placement="bottom" title="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio">
+                        <a href="/">
+                            <img src="images/logo.jpg" class="logo" alt="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio" data-toggle="tooltip" data-placement="bottom" title="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio">
+                        </a>
                         <h1>Me Indica Aê!</h1>
                         <p>Sabe aquele seu pedreiro de confiança ou pintor que deixou seu studio nos trincks!? <strong>Me Indica aê!</strong></p>
 
@@ -17,7 +19,7 @@
                                 <!-- nome -->
                                 <div class="form-group col-md-12">
                                     <label for="nomemorador">Nome do morador</label>
-                                    <input type="text" class="form-control" id="nomemorador" name="nomemorador" placeholder="Digite seu nome">
+                                    <input type="text" class="form-control" id="nomemorador" name="nomemorador" placeholder="Digite seu nome" required>
                                 </div>
                                 <!-- celular -->
                                 <div class="form-group col-md-6">
@@ -27,7 +29,7 @@
                                 <!-- apto -->
                                 <div class="form-group col-md-6">
                                     <label for="aptomorador">Nº apto</label>
-                                    <input type="number" class="form-control" id="aptoaptomorador" name="aptomorador" placeholder="0000">
+                                    <input type="number" class="form-control" id="aptoaptomorador" name="aptomorador" placeholder="0000" required>
                                 </div>
                             </div>
                             
@@ -37,12 +39,12 @@
                                 <!-- nome -->
                                 <div class="form-group col-md-12">
                                     <label for="nomeprofissional">Nome da empresa ou profissional</label>
-                                    <input type="text" class="form-control" id="nomeprofissional" name="nomeprofissional" placeholder="Digite o nome">
+                                    <input type="text" class="form-control" id="nomeprofissional" name="nomeprofissional" placeholder="Digite o nome" required>
                                 </div>
                                 <!-- categoria -->
                                 <div class="form-group col-md-6">
                                     <label for="categoriaprofissional">Profissão</label>
-                                    <select class="form-control" id="categoriaprofissional" name="categoriaprofissional">
+                                    <select class="form-control" id="categoriaprofissional" name="categoriaprofissional" required>
                                         <option>Escolha..</option>
                                         <option value="pintor">Pintor</option>
                                         <option value="designerdeinteriores">Designer de Interiores</option>
@@ -53,7 +55,7 @@
                                 <!-- celular -->
                                 <div class="form-group col-md-6">
                                     <label for="celularprofissional">Celular</label>
-                                    <input type="text" class="form-control celular" id="celularprofissional" name="celularprofissional" placeholder="(XX) 00000-0000">
+                                    <input type="text" class="form-control celular" id="celularprofissional" name="celularprofissional" placeholder="(XX) 00000-0000" required>
                                 </div>
                                 <!-- email -->
                                 <div class="form-group col-md-6">
@@ -68,7 +70,7 @@
                                 <!-- porque estou indicando -->
                                 <div class="form-group col-md-12">
                                     <label for="indicandoprofissional">Porquê estou compartilhando?</label>
-                                    <textarea class="form-control" id="indicandoprofissional" name="indicandoprofissional" rows="5" placeholder="Conte pra gente de forma resumida um pouquinho das experiências que teve com o(a) profissional."></textarea>
+                                    <textarea class="form-control" id="indicandoprofissional" name="indicandoprofissional" rows="5" placeholder="Conte pra gente de forma resumida um pouquinho das experiências que teve com o(a) profissional." required></textarea>
                                 </div>
                             </div>
                             
@@ -86,7 +88,7 @@
                             </div>
                         </form>
 
-                        <a href="" class="mt-5 d-block"><b>Ver profissionais</b></a>
+                        <a href="/profissionais.html" class="mt-5 d-block"><b>Ver profissionais</b></a>
                     </div>
                 </div>
             </div>

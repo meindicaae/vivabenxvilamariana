@@ -3,37 +3,33 @@
 <html lang="pt">
 <head>
     <meta charset="utf-8">
+    <title>Me Indica Aê - Viva Benx Vila Mariana</title>
     <meta name="author" content="Thiago Aguiar - thiago.aguiar86@gmail.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Me Indica Aê :: Viva Benx Vila Mariana :: Indicações de Prestadores de Serviços para o Condomímio">
+    <meta name="description" content="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomímio - Viva Benx Vila Mariana">
     <meta name="keywords" content="">
-    <title>Me Indica Aê :: Viva Benx Vila Mariana</title>
-    <!-- <link rel="apple-touch-icon"        sizes="57x57"    href="images/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon"        sizes="60x60"    href="images/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon"        sizes="72x72"    href="images/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon"        sizes="76x76"    href="images/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon"        sizes="114x114"  href="images/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon"        sizes="120x120"  href="images/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon"        sizes="144x144"  href="images/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon"        sizes="152x152"  href="images/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon"        sizes="180x180"  href="images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png"   sizes="192x192"  href="images/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png"   sizes="32x32"    href="images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png"   sizes="96x96"    href="images/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png"   sizes="16x16"    href="images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="images/favicon/manifest.json">
+    <link rel="apple-touch-icon"        sizes="57x57"    href="build/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon"        sizes="60x60"    href="build/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon"        sizes="72x72"    href="build/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon"        sizes="76x76"    href="build/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon"        sizes="114x114"  href="build/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon"        sizes="120x120"  href="build/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon"        sizes="144x144"  href="build/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon"        sizes="152x152"  href="build/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon"        sizes="180x180"  href="build/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png"   sizes="192x192"  href="build/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png"   sizes="32x32"    href="build/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png"   sizes="96x96"    href="build/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png"   sizes="16x16"    href="build/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="build/images/favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#000">
     <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#000"> -->
+    <meta name="theme-color" content="#000">
     
     <!-- stylesheet -->
     <link rel="stylesheet" href="build/css/bundle.min.css">
 </head>
 <body>
-	
-
-            
-    <!-- header -->
 
     <section>
         <div class="container">
@@ -41,7 +37,9 @@
                 <div class="col-xl-6 col-lg-7 col-md-9 col-sm-12 col-12 align-self-center">
                     <div class="box text-center">
                         <img src="build/images/logo-benx-vlm.png" class="logo-parceiro">
-                        <img src="build/images/logo.jpg" class="logo" alt="Me Indica Aê :: Indicações de Prestadores de Serviços para o Condomínio" data-toggle="tooltip" data-placement="bottom" title="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio">
+                        <a href="/">
+                            <img src="build/images/logo.jpg" class="logo" alt="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio" data-toggle="tooltip" data-placement="bottom" title="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio">
+                        </a>
                         <h1>Me Indica Aê!</h1>
                         <p>Sabe aquele seu pedreiro de confiança ou pintor que deixou seu studio nos trincks!? <strong>Me Indica aê!</strong></p>
 
@@ -52,7 +50,7 @@
                                 <!-- nome -->
                                 <div class="form-group col-md-12">
                                     <label for="nomemorador">Nome do morador</label>
-                                    <input type="text" class="form-control" id="nomemorador" name="nomemorador" placeholder="Digite seu nome">
+                                    <input type="text" class="form-control" id="nomemorador" name="nomemorador" placeholder="Digite seu nome" required>
                                 </div>
                                 <!-- celular -->
                                 <div class="form-group col-md-6">
@@ -62,7 +60,7 @@
                                 <!-- apto -->
                                 <div class="form-group col-md-6">
                                     <label for="aptomorador">Nº apto</label>
-                                    <input type="number" class="form-control" id="aptoaptomorador" name="aptomorador" placeholder="0000">
+                                    <input type="number" class="form-control" id="aptoaptomorador" name="aptomorador" placeholder="0000" required>
                                 </div>
                             </div>
                             
@@ -72,12 +70,12 @@
                                 <!-- nome -->
                                 <div class="form-group col-md-12">
                                     <label for="nomeprofissional">Nome da empresa ou profissional</label>
-                                    <input type="text" class="form-control" id="nomeprofissional" name="nomeprofissional" placeholder="Digite o nome">
+                                    <input type="text" class="form-control" id="nomeprofissional" name="nomeprofissional" placeholder="Digite o nome" required>
                                 </div>
                                 <!-- categoria -->
                                 <div class="form-group col-md-6">
                                     <label for="categoriaprofissional">Profissão</label>
-                                    <select class="form-control" id="categoriaprofissional" name="categoriaprofissional">
+                                    <select class="form-control" id="categoriaprofissional" name="categoriaprofissional" required>
                                         <option>Escolha..</option>
                                         <option value="pintor">Pintor</option>
                                         <option value="designerdeinteriores">Designer de Interiores</option>
@@ -88,7 +86,7 @@
                                 <!-- celular -->
                                 <div class="form-group col-md-6">
                                     <label for="celularprofissional">Celular</label>
-                                    <input type="text" class="form-control celular" id="celularprofissional" name="celularprofissional" placeholder="(XX) 00000-0000">
+                                    <input type="text" class="form-control celular" id="celularprofissional" name="celularprofissional" placeholder="(XX) 00000-0000" required>
                                 </div>
                                 <!-- email -->
                                 <div class="form-group col-md-6">
@@ -103,7 +101,7 @@
                                 <!-- porque estou indicando -->
                                 <div class="form-group col-md-12">
                                     <label for="indicandoprofissional">Porquê estou compartilhando?</label>
-                                    <textarea class="form-control" id="indicandoprofissional" name="indicandoprofissional" rows="5" placeholder="Conte pra gente de forma resumida um pouquinho das experiências que teve com o(a) profissional."></textarea>
+                                    <textarea class="form-control" id="indicandoprofissional" name="indicandoprofissional" rows="5" placeholder="Conte pra gente de forma resumida um pouquinho das experiências que teve com o(a) profissional." required></textarea>
                                 </div>
                             </div>
                             
@@ -121,7 +119,7 @@
                             </div>
                         </form>
 
-                        <a href="" class="mt-5 d-block"><b>Ver profissionais</b></a>
+                        <a href="/profissionais.html" class="mt-5 d-block"><b>Ver profissionais</b></a>
                     </div>
                 </div>
             </div>
@@ -130,7 +128,6 @@
 
     
 	
-    <!-- footer -->
 
 	<!-- javascript -->
 	<script src="build/js/bundle.min.js"></script>

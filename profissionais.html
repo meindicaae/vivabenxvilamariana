@@ -33,18 +33,44 @@
 
             
 
-    <section class="sucesso">
+    <section class="profissionais">
         <div class="container">
             <div class="row justify-content-center vh-100">
-                <div class="col-xl-6 col-lg-7 col-md-9 col-sm-12 col-12 align-self-center">
+                <div class="col-xl-6 col-lg-7 col-md-9 col-sm-12 col-12">
                     <div class="box text-center">
                         <img src="build/images/logo-benx-vlm.png" class="logo-parceiro">
                         <a href="/">
                             <img src="images/logo.jpg" class="logo" alt="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio" data-toggle="tooltip" data-placement="bottom" title="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio">
                         </a>
                         <h1>Me Indica Aê!</h1>
-                        <h2>Obrigado por compartilhar conosco!</h2>
-                        <a href="/profissionais.html" class="btn btn-primary mt-5 d-block" role="button">Ver profissionais</a>
+                        <h2>Galera indicada por nós!</h2>
+                        <p>Veja os últimos adicionados recentemente. <br>Também poderá buscar por categoria:</p>
+                        
+                        <!-- fitro -->
+                        <div class="form-group text-left mb-4">
+                            <label for="categoriaprofissional">Filtrar:</label>
+                            <select class="form-control" id="categoriaprofissional" name="categoriaprofissional">
+                                <option value="todos">Todas as categorias</option>
+                                <option value="Arquiteto">Arquiteto</option>
+                                <option value="Dedetizadora">Dedetizadora</option>
+                                <option value="Desentupidora">Desentupidora</option>
+                                <option value="Designer de Interiores">Designer de Interiores</option>
+                                <option value="Diarista">Diarista</option>
+                                <option value="Eletricista">Eletricista</option>
+                                <option value="Encanador">Encanador</option>
+                                <option value="Engenheiro Civil">Engenheiro Civil</option>
+                                <option value="Instalador em geral">Instalador em geral</option>
+                                <option value="Manicure e Pedicure">Manicure e Pedicure</option>
+                                <option value="Marceneiro">Marceneiro</option>
+                                <option value="Pedreiro">Pedreiro</option>
+                                <option value="Pintor">Pintor</option>
+                                <option value="Vidraceiro">Vidraceiro</option>
+                            </select>
+                        </div>
+
+                        <!-- lista de profissionais indicados -->
+                        <div class="row listaprofissionais" id="listaprofissionais"></div>
+                        <a href="/" class="btn btn-primary mt-4 d-block w-100" role="button">Quero indicar!</a>
                     </div>
                 </div>
             </div>
