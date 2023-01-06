@@ -80,3 +80,23 @@ textarea:focus:-ms-input-placeholder {
     }
 
 }
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.spinner {
+    text-align: center;
+    margin: 50px auto;
+    display: block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 6px solid #77aa9b;
+    border-bottom-color: transparent;
+    transform: rotate(360);
+
+    -webkit-animation: spin 0.7s linear infinite;
+    -moz-animation: spin 0.7s linear infinite;
+    animation: spin 0.7s linear infinite;
+}
