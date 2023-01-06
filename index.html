@@ -30,6 +30,11 @@
     <link rel="stylesheet" href="build/css/bundle.min.css">
 </head>
 <body>
+	
+
+            
+    <!-- header -->
+
     <section>
         <div class="container">
             <div class="row justify-content-center vh-100">
@@ -40,7 +45,7 @@
                         <h1>Me Indica Aê!</h1>
                         <p>Sabe aquele seu pedreiro de confiança ou pintor que deixou seu studio nos trincks!? <strong>Me Indica aê!</strong></p>
 
-                        <form class="text-left my-4" action="">
+                        <form action="https://api.sheetmonkey.io/form/eq6HsrSoaM9oFxP9531Lae" method="post" class="text-left my-4">
 
                             <!-- dados do morador -->
                             <div class="form-row my-4">
@@ -101,6 +106,12 @@
                                     <textarea class="form-control" id="indicandoprofissional" name="indicandoprofissional" rows="5" placeholder="Conte pra gente de forma resumida um pouquinho das experiências que teve com o(a) profissional."></textarea>
                                 </div>
                             </div>
+                            
+                            <!-- datetime -->
+                            <input type="hidden" name="datacadastro" value="x-sheetmonkey-current-date-time">
+                            
+                            <!-- redirect -->
+                            <input type="hidden" name="x-sheetmonkey-redirect" value="https://meindicaae.netlify.app/sucesso.html">
 
                             <!-- submit -->
                             <div class="form-row my-4">
@@ -116,6 +127,10 @@
             </div>
         </div>
     </section>
+
+    
+	
+    <!-- footer -->
 
 	<!-- javascript -->
 	<script src="build/js/bundle.min.js"></script>
