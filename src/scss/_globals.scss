@@ -101,9 +101,28 @@ li {
 }
 .logo-parceiro {
 	position: absolute;
-	top: 32px;
-	right: 20px;
+	top: 30px;
+	right: 10px;
 	width: 80px;
+	// border: 1px solid red;
+	img {
+		width: 100%;
+	}
+}
+.googlesafebrowsing {
+	position: absolute;
+	top: 42px;
+	left: 10px;
+	width: 80px;
+	// border: 1px solid red;
+	img {
+		width: 30px;
+	}
+	span {
+		display: block;
+		margin: 0 auto;
+		font-size: 0.7em;
+	}
 }
 .btn-primary {
 	// background-color: #6F3FFA;

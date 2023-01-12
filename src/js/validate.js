@@ -61,7 +61,11 @@ $(".rg").inputmask("99.999.999-9");
 $(".fixo").inputmask("(99) 9999-9999");
 
 // Celular
-$(".celular").inputmask("(99) 99999-9999");
+// $(".celular").inputmask("(99) 99999-9999");
+$(".celular").inputmask({
+	mask: ['(999) 999-9999', '(99) 99999-9999', '(99) 9999-999999'],
+	keepStatic: true
+});
 
 // CEP
 $(".cep").inputmask("99999-999");
