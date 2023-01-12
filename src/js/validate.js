@@ -79,52 +79,21 @@ $("input[id*='cpfcnpj']").inputmask({
 	keepStatic: true
 });
 
+
 // recaptcha v2
-// function scaleCaptcha() {
-//     // Width of the reCAPTCHA element, in pixels 
-//     var reCaptchaWidth = 304;
-//     var reCaptchaheight = 78;
+document.getElementById("form").addEventListener("submit",function(event) {
+	
+	var response = grecaptcha.getResponse();
+	
+	if(response.length == 0) { 	
+		//reCaptcha not verified
+		event.preventDefault(); 
+		
+		alert('Para prosseguir, confirme que você não é um robô.');
 
-//     // Get the containing element's width
-//     var containerWidth = $('.container').width();
+		return false;
 
-//     if (reCaptchaWidth > containerWidth) {
-//         // Calculate the scale
-//         var captchaScale = containerWidth / reCaptchaWidth;
-//         // Apply the transformation
-//         $('.g-recaptcha').css({
-//             'transform': 'scale(' + captchaScale + ')'
-//         });
-//         $('.g-recaptcha').css({
-//             '-webkit-transform': 'scale(' + captchaScale + ')'
-//         });
-//         $('.g-recaptcha').css({
-//             'transform-origin': '0 0'
-//         });
-//         $('.g-recaptcha').css({
-//             '-webkit-transform-origin': '0 0'
-//         });
-
-//         $('#recaptcha-box').height(reCaptchaheight * captchaScale);
-//     }
-// }
-// $(window).resize(function () {
-//     scaleCaptcha();
-// });
-// scaleCaptcha();
-
-document.getElementById("form").addEventListener("submit",function(evt)
-  {
-  
-  var response = grecaptcha.getResponse();
-  if(response.length == 0) 
-  { 
-    //reCaptcha not verified
-    alert("please verify you are humann!"); 
-    evt.preventDefault();
-    return false;
-  }
-  //captcha verified
-  //do the rest of your validations here
-  
+	}
+	//captcha verified
+	//do the rest of your validations here
 });
