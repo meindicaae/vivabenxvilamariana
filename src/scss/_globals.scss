@@ -172,13 +172,21 @@ BOOTSTRAP 4 BREAKPOINTS
 
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 350px) {
-	.box {
-		padding: 40px 30px;
-	}
 	.g-recaptcha {
 		div {
 			margin: 0 auto;
 			width: 250px !important;
+		}
+	}
+}
+@media (max-width: 375px) {
+	.box {
+		padding: 40px 20px;
+	}
+	.g-recaptcha {
+		div {
+			margin: 0 auto;
+			width: 101% !important;
 		}
 		iframe {
 			width: 100%;
