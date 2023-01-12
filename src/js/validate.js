@@ -80,35 +80,35 @@ $("input[id*='cpfcnpj']").inputmask({
 });
 
 // recaptcha v2
-function scaleCaptcha() {
-    // Width of the reCAPTCHA element, in pixels 
-    var reCaptchaWidth = 304;
-    var reCaptchaheight = 78;
+// function scaleCaptcha() {
+//     // Width of the reCAPTCHA element, in pixels 
+//     var reCaptchaWidth = 304;
+//     var reCaptchaheight = 78;
 
-    // Get the containing element's width
-    var containerWidth = $('.container').width();
+//     // Get the containing element's width
+//     var containerWidth = $('.container').width();
 
-    if (reCaptchaWidth > containerWidth) {
-        // Calculate the scale
-        var captchaScale = containerWidth / reCaptchaWidth;
-        // Apply the transformation
-        $('.g-recaptcha').css({
-            'transform': 'scale(' + captchaScale + ')'
-        });
-        $('.g-recaptcha').css({
-            '-webkit-transform': 'scale(' + captchaScale + ')'
-        });
-        $('.g-recaptcha').css({
-            'transform-origin': '0 0'
-        });
-        $('.g-recaptcha').css({
-            '-webkit-transform-origin': '0 0'
-        });
+//     if (reCaptchaWidth > containerWidth) {
+//         // Calculate the scale
+//         var captchaScale = containerWidth / reCaptchaWidth;
+//         // Apply the transformation
+//         $('.g-recaptcha').css({
+//             'transform': 'scale(' + captchaScale + ')'
+//         });
+//         $('.g-recaptcha').css({
+//             '-webkit-transform': 'scale(' + captchaScale + ')'
+//         });
+//         $('.g-recaptcha').css({
+//             'transform-origin': '0 0'
+//         });
+//         $('.g-recaptcha').css({
+//             '-webkit-transform-origin': '0 0'
+//         });
 
-        $('#recaptcha-box').height(reCaptchaheight * captchaScale);
-    }
-}
-$(window).resize(function () {
-    scaleCaptcha();
-});
-scaleCaptcha();
+//         $('#recaptcha-box').height(reCaptchaheight * captchaScale);
+//     }
+// }
+// $(window).resize(function () {
+//     scaleCaptcha();
+// });
+// scaleCaptcha();
