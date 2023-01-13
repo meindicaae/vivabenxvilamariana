@@ -81,7 +81,7 @@ $("input[id*='cpfcnpj']").inputmask({
 
 
 // recaptcha v2
-var getProfissionaisJSON = {
+var recaptchaVerify = {
     init: function() {
         this.engine();
     },
