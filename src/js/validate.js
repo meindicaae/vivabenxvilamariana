@@ -81,19 +81,25 @@ $("input[id*='cpfcnpj']").inputmask({
 
 
 // recaptcha v2
-document.getElementById("form").addEventListener("submit",function(event) {
+var getProfissionaisJSON = {
+    init: function() {
+        this.engine();
+    },
+    engine: function() {
+		document.getElementById("form").addEventListener("submit",function(event) {
 	
-	var response = grecaptcha.getResponse();
-	
-	if(response.length == 0) { 	
-		//reCaptcha not verified
-		event.preventDefault(); 
+			var response = grecaptcha.getResponse();
+			
+			if(response.length == 0) { 	
+				//reCaptcha not verified
+				event.preventDefault(); 
+				
+				alert('Para prosseguir, confirme que você não é um robô.');
 		
-		alert('Para prosseguir, confirme que você não é um robô.');
-
-		return false;
-
+				return false;
+			}
+			//captcha verified
+			//do the rest of your validations here
+		});
 	}
-	//captcha verified
-	//do the rest of your validations here
-});
+}

@@ -1,7 +1,13 @@
 {% extends "layouts/default.html" %}
 
-    {% block content %}
+{% block content %}
 
-        {% include "partials/index.html" %}
+    {% include "partials/index.html" %}
 
-    {% endblock %}
+{% endblock %}
+
+{% block script %}
+    <script type="javascript">
+        getProfissionaisJSON.init();
+    </script>
+{% endblock %}
