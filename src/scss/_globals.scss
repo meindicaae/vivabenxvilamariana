@@ -129,12 +129,14 @@ li {
 .btn-primary {
 	background-image: linear-gradient(to right, #0aa281, #38a488, #51a68e, #65a895, #77aa9b);
 	border: 0 none;
+	&.type-2 {
+		border: 1px solid #0aa281;
+		background-color: transparent;
+		background-image: none;
+		color: #0aa281;
+	}
 }
-.btn-secondary {
-	// background-image: linear-gradient(to right, #1e024c, #2b0a6f, #351694, #3c24bd, #3e33e7);
-	background-image: linear-gradient(to right, #1e024c, #23035f, #280372, #2c0586, #2e089b);
-	border: 0 none;
-}
+
 .btn {
 	font-weight: 600;
 	font-size: 1.1em;
