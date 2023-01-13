@@ -79,27 +79,16 @@ $("input[id*='cpfcnpj']").inputmask({
 	keepStatic: true
 });
 
-
-// recaptcha v2
-var recaptchaVerify = {
-    init: function() {
-        this.engine();
-    },
-    engine: function() {
-		document.getElementById("form").addEventListener("submit",function(event) {
-	
-			var response = grecaptcha.getResponse();
-			
-			if(response.length == 0) { 	
-				//reCaptcha not verified
-				event.preventDefault(); 
-				
-				alert('Para prosseguir, confirme que você não é um robô.');
-		
-				return false;
-			}
-			//captcha verified
-			//do the rest of your validations here
-		});
-	}
+// recaptchaVerify
+var recaptcha = document.getElementById("form");
+if(recaptcha) {
+	recaptcha.addEventListener("submit",function(event) {
+		var response = grecaptcha.getResponse();
+		if(response.length == 0) { 	
+			//reCaptcha not verified
+			alert('Para prosseguir, confirme que você não é um robô.');
+			event.preventDefault(); 
+			return false;
+		}
+	});
 }
