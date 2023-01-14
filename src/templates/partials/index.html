@@ -1,8 +1,9 @@
-    {% include "partials/elements/header.html" %}
+    {% set pageName = 'Me Indica Aê - Viva Benx Vila Mariana - Página inicial' %}
+    {% include "partials/elements/head.html" %}
 
-    <section>
+    <section class="tunel">
         <div class="container">
-            <div class="row justify-content-center"> <!-- vh-100 -->
+            <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-7 col-md-9 col-sm-12 col-12 align-self-center">
                     <div class="box text-center">
                         <!-- google safe browsing -->
@@ -22,119 +23,12 @@
                         <h1>Me Indica Aê!</h1>
                         <p>Sabe aquele seu pedreiro de confiança ou pintor que deixou seu studio nos trincks!? <strong>Me Indica aê!</strong></p>
 
-                        <form action="https://api.sheetmonkey.io/form/eq6HsrSoaM9oFxP9531Lae" method="post" class="text-left mt-4 mb-0" id="form">
-
-                            <!-- dados do morador -->
-                            <div class="form-row my-4">
-                                <!-- nome -->
-                                <div class="form-group col-md-12">
-                                    <label for="nomemorador">Nome do morador</label>
-                                    <input type="text" class="form-control" id="nomemorador" name="nomemorador" placeholder="Digite seu nome" required tabindex="1">
-                                </div>
-                                <!-- celular -->
-                                <div class="form-group col-md-6">
-                                    <label for="celularmorador">Celular <small>(opcional)</small></label>
-                                    <input type="text" class="form-control celular" id="celularmorador" name="celularmorador" placeholder="(XX) 00000-0000" tabindex="2">
-                                </div>
-                                <!-- apto -->
-                                <div class="form-group col-md-6">
-                                    <label for="aptomorador">Nº apto</label>
-                                    <input type="number" class="form-control" id="aptoaptomorador" name="aptomorador" placeholder="0000" required tabindex="3">
-                                </div>
-                            </div>
-                            
-                            <!-- dados do profissional -->
-                            <div class="form-row my-4">
-                                <h2>Dados do(a) profissional</h2>
-                                <!-- nome -->
-                                <div class="form-group col-md-12">
-                                    <label for="nomeprofissional">Nome da empresa ou profissional</label>
-                                    <input type="text" class="form-control" id="nomeprofissional" name="nomeprofissional" placeholder="Digite o nome" required tabindex="4">
-                                </div>
-                                <!-- categoria -->
-                                <div class="form-group col-md-6">
-                                    <label for="categoriaprofissional">Profissão</label>
-                                    <select class="form-control" id="categoriaprofissional" name="categoriaprofissional" required tabindex="5">
-                                        
-                                        <option selected disabled>Todas as categorias</option>
-                                        <option value="Arquiteto">Arquiteto</option>
-                                        <option value="Automação residencial">Automação residencial</option>
-                                        <option value="Artista plástico">Artista plástico</option>
-                                        <option value="Azulejista">Azulejista</option>
-                                        <option value="Chaveiro">Chaveiro</option>
-                                        <option value="Ceramista">Ceramista</option>
-                                        <option value="Cimenteiro">Cimenteiro</option>
-                                        <option value="Cortinas e Persianas">Cortinas e Persianas</option>
-                                        <option value="Dedetizadora">Dedetizadora</option>
-                                        <option value="Desentupidora">Desentupidora</option>
-                                        <option value="Designer de Interiores">Designer de Interiores</option>
-                                        <option value="Diarista">Diarista</option>
-                                        <option value="Eletricista">Eletricista</option>
-                                        <option value="Encanador">Encanador</option>
-                                        <option value="Engenheiro Civil">Engenheiro Civil</option>
-                                        <option value="Esquadrista">Esquadrista</option>
-                                        <option value="Fechadura digital">Fechadura digital</option>
-                                        <option value="Gesseiro">Gesseiro</option>
-                                        <option value="Iluminação">Iluminação</option>
-                                        <option value="Instalador em geral">Instalador em geral</option>
-                                        <option value="Marceneiro">Marceneiro</option>
-                                        <option value="Montador de Alvenarias e Estofados">Montador de Alvenarias e Estofados</option>
-                                        <option value="Pedreiro">Pedreiro</option>
-                                        <option value="Pintor">Pintor</option>
-                                        <option value="Quadro e Decoração">Quadro e Decoração</option>
-                                        <option value="Rede de proteção">Rede de proteção</option>
-                                        <option value="Restaurador em geral">Restaurador em geral</option>
-                                        <option value="Revestimento">Revestimento</option>
-                                        <option value="Vidraceiro">Vidraceiro</option>
-
-                                    </select>
-                                </div>
-                                <!-- celular -->
-                                <div class="form-group col-md-6">
-                                    <label for="celularprofissional">Celular</label>
-                                    <input type="text" class="form-control celular" id="celularprofissional" name="celularprofissional" placeholder="(XX) 00000-0000" required tabindex="6">
-                                </div>
-                                <!-- email -->
-                                <div class="form-group col-md-6">
-                                    <label for="emailprofissional">E-mail <small>(opcional)</small></label>
-                                    <input type="email" class="form-control" id="emailprofissional" name="emailprofissional" placeholder="Digite o e-mail" tabindex="7">
-                                </div>
-                                <!-- site / instagram / twitter -->
-                                <div class="form-group col-md-6">
-                                    <label for="siteprofissional">Site | Insta | Twitter <small>(opcional)</small></label>
-                                    <input type="url" class="form-control" id="siteprofissional" name="siteprofissional" placeholder="Digite o site ou rede social" tabindex="8">
-                                </div>
-                                <!-- porque estou indicando -->
-                                <div class="form-group col-md-12">
-                                    <label for="indicandoprofissional">Porquê estou compartilhando?</label>
-                                    <textarea class="form-control" id="indicandoprofissional" name="indicandoprofissional" rows="5" placeholder="Conte pra gente de forma resumida um pouquinho das experiências que teve com o(a) profissional." required tabindex="9"></textarea>
-                                </div>
-                                <!-- recaptchav3 -->
-                                <div class="form-group col-md-12 mt-4">
-                                    <div class="g-recaptcha" data-sitekey="6LeqPe8jAAAAAMLKRB5HqobcKAZZ9WlfW9DO_FnQ"></div>
-                                </div>
-                            </div>
-                            
-                            <!-- datetime -->
-                            <input type="hidden" name="datacadastro" value="x-sheetmonkey-current-date-time">
-                            
-                            <!-- redirect -->
-                            <input type="hidden" name="x-sheetmonkey-redirect" value="https://meindicaae.netlify.app/sucesso.html">
-
-                            <!-- submit -->
-                            <div class="form-group mt-4">
-                                <button type="submit" class="btn btn-primary w-100">
-                                    <span>Cadastrar</span>
-                                </button>
-                            </div>
-
-                            <div class="form-group my-4">
-                                <hr>
-                            </div>
-
-                            <!-- profissionais -->
-                            <a href="/profissionais.html" class="btn btn-primary type-2 w-100">Ver profissionais</a>
-                        </form>
+                        <!-- indicar -->
+                        <div class="mt-5">
+                            <a class="btn btn-primary my-3 d-block" href="/indicar.html" role="button">Quero indicar!</a>
+                            <a class="btn btn-primary my-3 d-block" href="/profissionais.html" role="button">Profissionais</a>
+                            <a class="btn btn-primary type-2 my-3 d-block" href="/sorteio.html" role="button">Sorteios</a>
+                        </div>
                     </div>
                 </div>
             </div>

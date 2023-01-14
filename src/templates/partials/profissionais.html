@@ -1,4 +1,7 @@
-    {% include "partials/elements/header.html" %}
+    {% set pageName = 'Me Indica Aê - Viva Benx Vila Mariana - Profissionais indicados' %}
+    {% set pageURL = 'https://meindicaae.netlify.app/profissionais.html' %}
+
+    {% include "partials/elements/head.html" %}
 
     <section class="profissionais">
         <div class="container">
@@ -64,7 +67,7 @@
                         <div class="row listaprofissionais" id="listaprofissionais">
                             <span class="spinner">&nbsp;</span>
                         </div>
-                        <a href="/" class="btn btn-primary mt-4 d-block w-100" role="button">Quero indicar!</a>
+                        <a href="/indicar.html" class="btn btn-primary mt-4 d-block w-100" role="button">Quero indicar!</a>
                     </div>
                 </div>
             </div>

@@ -90,7 +90,7 @@ li {
 }
 .box {
 	width: 100%;
-	min-height: 80vh;
+	// min-height: 80vh;
 	margin: 20px auto;
 	padding: 40px 30px;
 	border-radius: 30px;
@@ -134,6 +134,16 @@ li {
 		background-color: transparent;
 		background-image: none;
 		color: #0aa281;
+		&:not(:disabled):not(:disabled):active {
+			border: 1px solid #0aa281;
+			background-color: transparent;
+			background-image: none;
+			color: #0aa281;
+		 }
+	}
+	&:not(:disabled):not(:disabled):active {
+		outline: none !important;
+   		box-shadow: none !important;
 	}
 }
 
@@ -174,6 +184,18 @@ li {
 	margin: 0 auto;
 }
 
+.pricetag {
+	border-radius: 20px;
+	border-style: dashed;
+	box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.1);
+	padding: 35px;
+	font-size: 3em;
+	font-weight: 600;
+	max-width: 280px;
+	margin: 30px auto;
+	background-color: $fourth;
+}
+
 /*
 ####################################################
 BOOTSTRAP 4 BREAKPOINTS
@@ -208,7 +230,13 @@ BOOTSTRAP 4 BREAKPOINTS
 }
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+	.tunel {
+		.row {
+			height: 100vh;
+		}
+	}
+}
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {}

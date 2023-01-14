@@ -8,5 +8,11 @@
     }, {
       "src": "image-two.png",
       "alt": "Image two alt text"
-    }]
+    }],
+    "pages": {
+      "index": {
+          "title": "Título da Página Inicial",
+          "description": "Descrição da Página Inicial"
+      }
+  }
   }
