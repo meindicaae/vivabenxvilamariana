@@ -61,6 +61,7 @@ var getProfissionaisJSON = {
     init: function() {
         this.listAll();
         this.engine();
+        this.blacklist();
     },
     listAll: function() {
 
@@ -77,23 +78,25 @@ var getProfissionaisJSON = {
                 result.reverse();
 
                 for (var i in result) {                            
-                    output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
-                    output += '<h3>'+ result[i].nomeprofissional +'</h3>';
-                    output += '<h4><strong>'+result[i].categoriaprofissional+'</strong></h4>';
-                    output += '<p><i class="fa fa-whatsapp" aria-hidden="true"></i> <a href="https://api.whatsapp.com/send?phone=55'+result[i].celularprofissional+'&text=Olá, '+result[i].nomeprofissional+'!%20Peguei%20seu%20contato%20no%20Me%20Indica%20Aê,%20e%20eu%20gostaria%20de%20fazer%20um%20orçamento%20com%20você." target="_blank">'+ result[i].celularprofissional +'</a></p>';
+                    if(result[i].blacklist == 0) {
+                        output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
+                        output += '<h3>'+ result[i].nomeprofissional +'</h3>';
+                        output += '<h4><strong>'+result[i].categoriaprofissional+'</strong></h4>';
+                        output += '<p><i class="fa fa-whatsapp" aria-hidden="true"></i> <a href="https://api.whatsapp.com/send?phone=55'+result[i].celularprofissional+'&text=Olá, '+result[i].nomeprofissional+'!%20Peguei%20seu%20contato%20no%20Me%20Indica%20Aê,%20e%20eu%20gostaria%20de%20fazer%20um%20orçamento%20com%20você." target="_blank">'+ result[i].celularprofissional +'</a></p>';
 
-                    if(result[i].emailprofissional != '') {
-                        output += '<p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:'+result[i].emailprofissional+'?subject=Me Indica Aê - Solicitação de Orçamento">Enviar email</a></p>';
+                        if(result[i].emailprofissional != '') {
+                            output += '<p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:'+result[i].emailprofissional+'?subject=Me Indica Aê - Solicitação de Orçamento">Enviar email</a></p>';
+                        }
+                        
+                        if(result[i].siteprofissional != '') {
+                            output += '<p class="siteprofissional"><i class="fa fa-globe" aria-hidden="true"></i> <a href='+ result[i].siteprofissional +' target="_blank"> Acessar o site </a></p>';
+                        }
+                        
+                        output += '<hr>';
+                        output += '<p class="quemindicou"><small><strong>Por: </strong><em>'+ result[i].nomemorador +'</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
+                        output += '<p class="comentario">'+ '<i class="fa fa-quote-left mr-2" aria-hidden="true"></i> ' + result[i].indicandoprofissional + '</p>';
+                        output += '</div>';
                     }
-                    
-                    if(result[i].siteprofissional != '') {
-                        output += '<p class="siteprofissional"><i class="fa fa-globe" aria-hidden="true"></i> <a href='+ result[i].siteprofissional +' target="_blank"> Acessar o site </a></p>';
-                    }
-                    
-                    output += '<hr>';
-                    output += '<p class="quemindicou"><small><strong>Por: </strong><em>'+ result[i].nomemorador +'</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
-                    output += '<p class="comentario">'+ '<i class="fa fa-quote-left mr-2" aria-hidden="true"></i> ' + result[i].indicandoprofissional + '</p>';
-                    output += '</div>';
                 }
 
                 el.html(output);
@@ -125,38 +128,39 @@ var getProfissionaisJSON = {
                         output = '';
                         
                         for (var i in result) {
-                            
-                            if(result[i].categoriaprofissional == filterSelected) {
-                                output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
-                                output += '<h3>'+ result[i].nomeprofissional +'</h3>';
-                                output += '<h4><strong>'+result[i].categoriaprofissional+'</strong></h4>';
-                                output += '<p><i class="fa fa-whatsapp" aria-hidden="true"></i> <a href="https://api.whatsapp.com/send?phone=55'+result[i].celularprofissional+'&text=Olá, '+result[i].nomeprofissional+'!%20Peguei%20seu%20contato%20no%20Me%20Indica%20Aê,%20e%20eu%20gostaria%20de%20fazer%20um%20orçamento%20com%20você." target="_blank">'+ result[i].celularprofissional +'</a></p>';
-                                
-                                if(result[i].emailprofissional != '') {
+                            if(result[i].blacklist == 0) {
+                                if(result[i].categoriaprofissional == filterSelected) {
+                                    output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
+                                    output += '<h3>'+ result[i].nomeprofissional +'</h3>';
+                                    output += '<h4><strong>'+result[i].categoriaprofissional+'</strong></h4>';
+                                    output += '<p><i class="fa fa-whatsapp" aria-hidden="true"></i> <a href="https://api.whatsapp.com/send?phone=55'+result[i].celularprofissional+'&text=Olá, '+result[i].nomeprofissional+'!%20Peguei%20seu%20contato%20no%20Me%20Indica%20Aê,%20e%20eu%20gostaria%20de%20fazer%20um%20orçamento%20com%20você." target="_blank">'+ result[i].celularprofissional +'</a></p>';
+                                    
+                                    if(result[i].emailprofissional != '') {
+                                        output += '<p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:'+result[i].emailprofissional+'?subject=Me Indica Aê - Solicitação de Orçamento">Enviar email</a></p>';
+                                    }
+                                    
+                                    if(result[i].siteprofissional != '') {
+                                        output += '<p class="siteprofissional"><i class="fa fa-globe" aria-hidden="true"></i> <a href='+ result[i].siteprofissional +' target="_blank">Acessar o site</a></p>';
+                                    }
+
+                                    output += '<hr>';
+                                    output += '<p class="quemindicou"><small><strong>Por: </strong><em>'+ result[i].nomemorador +'</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
+                                    output += '<p class="comentario">'+ '<i class="fa fa-quote-left mr-2" aria-hidden="true"></i> ' + result[i].indicandoprofissional + '</p>';
+                                    output += '</div>';
+                                    
+                                } else if(filterSelected == 'todos') {
+
+                                    output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
+                                    output += '<h3>'+ result[i].nomeprofissional +'</h3>';
+                                    output += '<h4><strong>'+result[i].categoriaprofissional+'</strong></h4>';
+                                    output += '<p><i class="fa fa-whatsapp" aria-hidden="true"></i> <a href="https://api.whatsapp.com/send?phone=55'+result[i].celularprofissional+'&text=Olá, '+result[i].nomeprofissional+'!%20Peguei%20seu%20contato%20no%20Me%20Indica%20Aê,%20e%20eu%20gostaria%20de%20fazer%20um%20orçamento%20com%20você." target="_blank">'+ result[i].celularprofissional +'</a></p>';
                                     output += '<p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:'+result[i].emailprofissional+'?subject=Me Indica Aê - Solicitação de Orçamento">Enviar email</a></p>';
+                                    output += '<p><i class="fa fa-globe" aria-hidden="true"></i> <a href='+ result[i].siteprofissional +' target="_blank">Acessar o site</a></p>';
+                                    output += '<hr>';
+                                    output += '<p class="quemindicou"><small><strong>Por: </strong><em>'+ result[i].nomemorador +'</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
+                                    output += '<p class="comentario">'+ '<i class="fa fa-quote-left mr-2" aria-hidden="true"></i> ' + result[i].indicandoprofissional + '</p>';
+                                    output += '</div>';
                                 }
-                                
-                                if(result[i].siteprofissional != '') {
-                                    output += '<p class="siteprofissional"><i class="fa fa-globe" aria-hidden="true"></i> <a href='+ result[i].siteprofissional +' target="_blank">Acessar o site</a></p>';
-                                }
-
-                                output += '<hr>';
-                                output += '<p class="quemindicou"><small><strong>Por: </strong><em>'+ result[i].nomemorador +'</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
-                                output += '<p class="comentario">'+ '<i class="fa fa-quote-left mr-2" aria-hidden="true"></i> ' + result[i].indicandoprofissional + '</p>';
-                                output += '</div>';
-                                
-                            } else if(filterSelected == 'todos') {
-
-                                output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
-                                output += '<h3>'+ result[i].nomeprofissional +'</h3>';
-                                output += '<h4><strong>'+result[i].categoriaprofissional+'</strong></h4>';
-                                output += '<p><i class="fa fa-whatsapp" aria-hidden="true"></i> <a href="https://api.whatsapp.com/send?phone=55'+result[i].celularprofissional+'&text=Olá, '+result[i].nomeprofissional+'!%20Peguei%20seu%20contato%20no%20Me%20Indica%20Aê,%20e%20eu%20gostaria%20de%20fazer%20um%20orçamento%20com%20você." target="_blank">'+ result[i].celularprofissional +'</a></p>';
-                                output += '<p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:'+result[i].emailprofissional+'?subject=Me Indica Aê - Solicitação de Orçamento">Enviar email</a></p>';
-                                output += '<p><i class="fa fa-globe" aria-hidden="true"></i> <a href='+ result[i].siteprofissional +' target="_blank">Acessar o site</a></p>';
-                                output += '<hr>';
-                                output += '<p class="quemindicou"><small><strong>Por: </strong><em>'+ result[i].nomemorador +'</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
-                                output += '<p class="comentario">'+ '<i class="fa fa-quote-left mr-2" aria-hidden="true"></i> ' + result[i].indicandoprofissional + '</p>';
-                                output += '</div>';
                             }
                         }
         
@@ -166,6 +170,46 @@ var getProfissionaisJSON = {
                 )
             }
         });
+    },
+    blacklist: function() {
+
+        var el = $('#blacklist');
+        
+        $.ajax({
+            type: "GET",
+            url: "https://opensheet.elk.sh/1f-Cq5gpr03s6C0NZGdJH42LLFVp7UVn2YhSBQIdD7Po/Profissionais",
+            success: function(result) {
+                
+                // console.log(result);
+                var output = '';
+
+                result.reverse();
+
+                for (var i in result) {
+                    if(result[i].blacklist == 1) {
+                        output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
+                        output += '<h3>'+ result[i].nomeprofissional +'</h3>';
+                        output += '<h4><strong>'+result[i].categoriaprofissional+'</strong></h4>';
+                        output += '<p><i class="fa fa-whatsapp" aria-hidden="true"></i> '+ result[i].celularprofissional.replace(/(?<=\d{2})\d/g, '*') +'</p>';
+
+                        if(result[i].emailprofissional != '') {
+                            output += '<p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:'+result[i].emailprofissional+'?subject=Me Indica Aê - Solicitação de Orçamento">Enviar email</a></p>';
+                        }
+                        
+                        if(result[i].siteprofissional != '') {
+                            output += '<p class="siteprofissional"><i class="fa fa-globe" aria-hidden="true"></i> <a href='+ result[i].siteprofissional +' target="_blank"> Acessar o site </a></p>';
+                        }
+                        
+                        output += '<hr>';
+                        output += '<p class="quemindicou"><small><strong>Por: </strong><em>Anônimo</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
+                        output += '</div>';
+                    }
+                }
+
+                el.html(output);
+            }
+        });
+
     }
 }
 getProfissionaisJSON.init();

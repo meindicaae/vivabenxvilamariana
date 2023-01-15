@@ -65,12 +65,14 @@
                         <h1>Me Indica Aê!</h1>
                         <h2>Blacklist</h2>
 
-                        <p>Lista de profissionais e empresas que não prestaram bons serviços e tiveram relatos de problemas informados pelos moradores.</p>
+                        <p class="mb-4">Lista de profissionais e empresas que <b>não prestaram bons serviços</b> e/ou que tiveram <b>relatos de problemas</b> informados por moradores.</p>
                         
-                        <!-- <p>Poxa... :( você teve problemas com um prestador de serviços? Então nos ajude! Relate resumidamente os problemas que teve para ficarmos atentos.</p>
-                        <p>Informando que caso esse profissional esteja na lista de indicados, ao relatar um problema ele será automaticamente removido dos indicados e adicionado na blacklist.</p> -->
+                        <!-- lista de profissionais indicados -->
+                        <div class="row listaprofissionais" id="blacklist">
+                            <span class="spinner">&nbsp;</span>
+                        </div>
                         
-                        <a href="#" class="btn btn-dark mt-5 d-block" role="button">Relatar um problema</a>
+                        <a href="/relatar-problema.html" class="btn btn-dark mt-4 d-block" role="button">Relatar um problema</a>
                     </div>
                 </div>
             </div>
@@ -83,6 +85,9 @@
 	<!-- javascript -->
 	<script src="js/bundle.min.js"></script>
 	
+        <script type="javascript">
+            getProfissionaisJSON.blacklist();
+        </script>
     
 </body>
 </html>
