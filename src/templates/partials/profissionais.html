@@ -1,5 +1,6 @@
-    {% set pageName = 'Me Indica Aê - Viva Benx Vila Mariana - Profissionais indicados' %}
+    {% set pageName = 'Me Indica Aê - Indicações dos melhores Prestadores de Serviços feitas pelos moradores para o seu Condomínio - Profissionais indicados' %}
     {% set pageURL = 'https://meindicaae.netlify.app/profissionais.html' %}
+    {% set checkCookie = 'checkCookie()' %}
 
     {% include "partials/elements/head.html" %}
 
@@ -18,8 +19,8 @@
                             <img src="images/logo-benx-vlm.png">
                         </a>
                         <!-- logo -->
-                        <a href="/">
-                            <img src="images/logo.jpg" class="logo" alt="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio" data-toggle="tooltip" data-placement="bottom" title="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio">
+                        <a href="/tunel.html">
+                            <img src="images/logo.jpg" class="logo" alt="{{pageName}}" data-toggle="tooltip" data-placement="bottom" title="{{pageName}}">
                         </a>
 
                         <h1>Me Indica Aê!</h1>
@@ -67,7 +68,9 @@
                         <div class="row listaprofissionais" id="listaprofissionais">
                             <span class="spinner">&nbsp;</span>
                         </div>
-                        <a href="/indicar.html" class="btn btn-primary mt-4 d-block w-100" role="button">Quero indicar!</a>
+                        <a href="/indicar.html" class="btn btn-primary my-5 d-block w-100" role="button">Quero indicar!</a>
+
+                        {% include "partials/elements/footer.html" %}
                     </div>
                 </div>
             </div>

@@ -78,17 +78,3 @@ $("input[id*='cpfcnpj']").inputmask({
 	mask: ['999.999.999-99', '99.999.999/9999-99'],
 	keepStatic: true
 });
-
-// recaptchaVerify
-var recaptcha = document.getElementById("form");
-if(recaptcha) {
-	recaptcha.addEventListener("submit",function(event) {
-		var response = grecaptcha.getResponse();
-		if(response.length == 0) { 	
-			//reCaptcha not verified
-			alert('Para prosseguir, confirme que você não é um robô.');
-			event.preventDefault(); 
-			return false;
-		}
-	});
-}

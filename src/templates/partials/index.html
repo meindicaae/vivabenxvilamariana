@@ -1,6 +1,7 @@
-    {% set pageName = 'Me Indica Aê - Viva Benx Vila Mariana - Página inicial' %}
+    {% set pageName = 'Me Indica Aê - Indicações dos melhores Prestadores de Serviços feitas pelos moradores para o seu Condomínio' %}
     {% set pageURL = 'https://meindicaae.netlify.app' %}
-
+    {% set checkCookie = 'checkCookie()' %}
+    
     {% include "partials/elements/head.html" %}
 
     <section class="tunel">
@@ -13,25 +14,27 @@
                             <img src="images/SafeBrowsing_Icon.png" alt="Google Safe Browsing" title="Google Site Seguro" class="img-fluid">
                             <span>Site seguro</span>
                         </a>
-                        <!-- parceiro -->
-                        <a href="https://www.vivabenx.com.br/empreendimento/viva-benx-vila-mariana" target="_blank" class="logo-parceiro">
-                            <img src="images/logo-benx-vlm.png">
-                        </a>
                         <!-- logo -->
-                        <a href="/">
-                            <img src="images/logo.jpg" class="logo" alt="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio" data-toggle="tooltip" data-placement="bottom" title="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio">
+                        <a href="#">
+                            <img src="images/logo.jpg" class="logo" alt="{{pageName}}" data-toggle="tooltip" data-placement="bottom" title="{{pageName}}">
                         </a>
 
                         <h1>Me Indica Aê!</h1>
-                        <p>Sabe aquele seu pedreiro de confiança ou pintor que deixou seu studio nos trincks!? <strong>Me Indica aê!</strong></p>
+                        <p>Sabe aquele seu pedreiro de confiança ou a arquiteta que deixou o seu apto nos trincks!? <strong>Me Indica aê!</strong></p>
 
-                        <!-- indicar -->
-                        <div class="mt-5">
-                            <a class="btn btn-primary my-3 d-block" href="/indicar.html" role="button">Quero indicar!</a>
-                            <a class="btn btn-primary my-3 d-block" href="/profissionais.html" role="button">Profissionais</a>
-                            <a class="btn btn-dark my-3 d-block" href="/blacklist.html" role="button">Blacklist</a>
-                            <a class="btn btn-primary type-2 my-3 d-block" href="/sorteio.html" role="button">Sorteios</a>
+                        <!-- filtro -->
+                        <div class="form-group mt-5 mb-0 filtro-condominio">
+                            <label for="nomecondominio">Qual é o seu condomínio?</label>
+                            <input type="text" class="form-control text-center" id="nomecondominio" name="nomecondominio" required tabindex="1" onkeyup="changeInput(this.value)">
+
+                            <!-- resultado autocomplete -->
+                            <div id="resultadoNomeCondominio"></div>
                         </div>
+
+                        <!-- fale conosco -->
+                        <p class="my-5">O condomínio não está na lista? <a href="mailto:contato.meindicaae@gmail.com'?subject=[Me Indica Aê!] - Solicitar cadastro de Condomínio"><b><u>Fale conosco</u></b></a>.</p>
+
+                        {% include "partials/elements/footer.html" %}
                     </div>
                 </div>
             </div>

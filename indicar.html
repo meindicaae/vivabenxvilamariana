@@ -4,18 +4,19 @@
     
     
     
+    
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="utf-8">
-    <title>Me Indica Aê - Viva Benx Vila Mariana - Indicar profissional</title>
+    <title>Me Indica Aê - Indicações dos melhores Prestadores de Serviços feitas pelos moradores para o seu Condomínio - Indicar profissional</title>
     <meta name="author" content="Thiago Aguiar - thiago.aguiar86@gmail.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomímio - Viva Benx Vila Mariana">
     <meta name="keywords" content="">
 
     <meta property="og:image" content="https://meindicaae.netlify.app/images/logo_og.png">
-    <meta property="og:title" content="Me Indica Aê - Viva Benx Vila Mariana - Indicar profissional">
+    <meta property="og:title" content="Me Indica Aê - Indicações dos melhores Prestadores de Serviços feitas pelos moradores para o seu Condomínio - Indicar profissional">
     <meta property="og:description" content="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomímio - Viva Benx Vila Mariana">
     <meta property="og:url" content="https://meindicaae.netlify.app/indicar.html">
 
@@ -43,11 +44,11 @@
     <!-- javascript -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
-<body>
+<body onload="checkCookie()">
 
     <section>
         <div class="container">
-            <div class="row justify-content-center"> <!-- vh-100 -->
+            <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-7 col-md-9 col-sm-12 col-12 align-self-center">
                     <div class="box text-center">
                         <!-- google safe browsing -->
@@ -60,14 +61,14 @@
                             <img src="images/logo-benx-vlm.png">
                         </a>
                         <!-- logo -->
-                        <a href="/">
-                            <img src="images/logo.jpg" class="logo" alt="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio" data-toggle="tooltip" data-placement="bottom" title="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio">
+                        <a href="/tunel.html">
+                            <img src="images/logo.jpg" class="logo" alt="Me Indica Aê - Indicações dos melhores Prestadores de Serviços feitas pelos moradores para o seu Condomínio - Indicar profissional" data-toggle="tooltip" data-placement="bottom" title="Me Indica Aê - Indicações dos melhores Prestadores de Serviços feitas pelos moradores para o seu Condomínio - Indicar profissional">
                         </a>
 
                         <h1>Me Indica Aê!</h1>
                         <p>Sabe aquele seu pedreiro de confiança ou pintor que deixou seu studio nos trincks!? <strong>Me Indica aê!</strong></p>
 
-                        <form action="https://api.sheetmonkey.io/form/eq6HsrSoaM9oFxP9531Lae" method="post" class="text-left mt-4 mb-0" id="form">
+                        <form action="https://api.sheetmonkey.io/form/eq6HsrSoaM9oFxP9531Lae" method="post" class="text-left my-5 mb-0" id="form">
 
                             <!-- dados do morador -->
                             <div class="form-row my-4">
@@ -100,7 +101,6 @@
                                 <div class="form-group col-md-6">
                                     <label for="categoriaprofissional">Profissão</label>
                                     <select class="form-control" id="categoriaprofissional" name="categoriaprofissional" required tabindex="5">
-                                        
                                         <option selected disabled>Todas as categorias</option>
                                         <option value="Arquiteto">Arquiteto</option>
                                         <option value="Automação residencial">Automação residencial</option>
@@ -131,7 +131,6 @@
                                         <option value="Restaurador em geral">Restaurador em geral</option>
                                         <option value="Revestimento">Revestimento</option>
                                         <option value="Vidraceiro">Vidraceiro</option>
-
                                     </select>
                                 </div>
                                 <!-- celular -->
@@ -166,6 +165,9 @@
                             <!-- datetime -->
                             <input type="hidden" name="datacadastro" value="x-sheetmonkey-current-date-time">
                             
+                            <!-- nome condominio -->
+                            <input type="hidden" name="nomecondominio" value="">
+                            
                             <!-- redirect -->
                             <input type="hidden" name="x-sheetmonkey-redirect" value="https://meindicaae.netlify.app/sucesso.html">
 
@@ -183,6 +185,15 @@
                             <!-- profissionais -->
                             <a href="/profissionais.html" class="btn btn-primary type-2 w-100">Ver profissionais</a>
                         </form>
+
+                        
+    <footer>
+        <p class="m-0">
+            <small>
+                <a href="#">Aviso de privacidade</a> <span>&bullet;</span> <a href="#">Termos de uso</a>
+            </small>
+        </p>
+    </footer>
                     </div>
                 </div>
             </div>
@@ -190,7 +201,6 @@
     </section>
 
 
-	
 
 	<!-- javascript -->
 	<script src="js/bundle.min.js"></script>

@@ -1,3 +1,4 @@
+// cookie aceite termos de uso
 window.cookieconsent.initialise({
 	container: document.getElementById("cookieconsent"),
 	palette: {

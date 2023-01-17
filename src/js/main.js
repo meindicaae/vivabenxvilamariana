@@ -13,48 +13,72 @@ $('.modal').modal(
     }
 );
 
-// google form sheet
-function handleSubmit(event) {
+// autocomplete
+var condominio = ['Viva Benx Cambuci I','Viva Benx Cambuci II','Viva Benx Vila Leopoldina I','Viva Benx Vila Leopoldina II','Viva Benx Vila Mariana','Viva Benx Vila Mascote','Viva Benx Mooca','Viva Benx Vila Olímpia'];
+function matchCondominio(input) {
+	var reg = new RegExp(input.split("").join("\\w*").replace(/\W/, ""), "i");
+	var res = [];
+	if (input.trim().length === 0) {
+		return res;
+	}
+	for (var i = 0, len = condominio.length; i < len; i++) {
+		if (condominio[i].match(reg)) {
+		res.push(condominio[i]);
+		}
+	}
+	return res;
+};
 
-    event.preventDefault();
+function changeInput(val) {
+	var autoCompleteResult = matchCondominio(val);
+	document.getElementById("resultadoNomeCondominio").innerHTML = "";
+	for (var i = 0, limit = 10, len = autoCompleteResult.length; i < len  && i < limit; i++) {
+		document.getElementById("resultadoNomeCondominio").innerHTML += "<a href='javascript:void(0)' onclick='setSearch(\"" + autoCompleteResult[i] + "\")'>" + autoCompleteResult[i] + "</a>";
+	}
+};
 
-    // dados morador
-    var nomemoradorinput = document.querySelector('input[name=nomemorador]').value;
-    var celularmoradorinput = document.querySelector('input[name=celularmorador]').value;
-    var aptomoradorinput = document.querySelector('input[name=aptomorador]').value;
+function setSearch(value) {
+    document.getElementById('nomecondominio').value = value;
+	document.getElementById("resultadoNomeCondominio").innerHTML = "";
+    var nomeCondominio = value;
+    var expireDate = new Date();
+    expireDate.setMonth(expireDate.getMonth() + 1);
+    document.cookie = 'nomecondominio='+ nomeCondominio +'; expires='+ expireDate.toGMTString();
+    location.href = "/tunel.html";
+};
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+};
+
+function checkCookie() {
+    var nomeCondominio = getCookie("nomecondominio");
+    var path = window.location.pathname;
+    var page = path.split("/").pop();
+    // console.log(page);
     
-    // dados profissional
-    var nomeprofissionalinput = document.querySelector('input[name=nomeprofissional]').value;
-    var categoriaprofissionalinput = document.querySelectorAll('option:checked');
-    var celularprofissionalinput = document.querySelector('input[name=celularprofissional]').value;
-    var emailprofissionalinput = document.querySelector('input[name=emailprofissional]').value;
-    var siteprofissionalinput = document.querySelector('input[name=siteprofissional]').value;
-    var indicandoprofissionalinput = document.querySelector('textarea[name=indicandoprofissional]').value;
+    if (nomeCondominio != "" && (page == 'index.html' || page == '')) {
+        // console.log('redireciona pra página tunel. Cookie ativado');
+        window.location.replace("/tunel.html");
 
-    fetch('https://api.sheetmonkey.io/form/eq6HsrSoaM9oFxP9531Lae', {
-        method: 'post',
-        mode: 'cors',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(
-            {
-                nomemorador: nomemoradorinput,
-                celularmorador: celularmoradorinput,
-                aptomorador: aptomoradorinput,
+    } else if(nomeCondominio == "" && page != 'index.html') {
+        window.location.replace("/index.html");
 
-                nomeprofissional: nomeprofissionalinput,
-                categoriaprofissional: categoriaprofissionalinput,
-                celularprofissional: celularprofissionalinput,
-                emailprofissional: emailprofissionalinput,
-                siteprofissional: siteprofissionalinput,
-                indicandoprofissional: indicandoprofissionalinput,
-            }
-        )
-    });
-} // document.querySelector('form').addEventListener('submit', handleSubmit);
-
+    }
+};
 
 // get json profissionais
 var getProfissionaisJSON = {
@@ -69,16 +93,17 @@ var getProfissionaisJSON = {
         
         $.ajax({
             type: "GET",
-            url: "https://opensheet.elk.sh/1f-Cq5gpr03s6C0NZGdJH42LLFVp7UVn2YhSBQIdD7Po/Profissionais",
+            url: "https://opensheet.elk.sh/1f-Cq5gpr03s6C0NZGdJH42LLFVp7UVn2YhSBQIdD7Po/1",
             success: function(result) {
                 
                 // console.log(result);
+                var nomeCondominio = getCookie("nomecondominio");
                 var output = '';
 
                 result.reverse();
 
                 for (var i in result) {                            
-                    if(result[i].blacklist == 0) {
+                    if(result[i].nomecondominio == nomeCondominio && result[i].blacklist == 0) {
                         output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
                         output += '<h3>'+ result[i].nomeprofissional +'</h3>';
                         output += '<h4><strong>'+result[i].categoriaprofissional+'</strong></h4>';
@@ -111,7 +136,7 @@ var getProfissionaisJSON = {
 
         $.ajax({
             type: "GET",
-            url: "https://opensheet.elk.sh/1f-Cq5gpr03s6C0NZGdJH42LLFVp7UVn2YhSBQIdD7Po/Profissionais",
+            url: "https://opensheet.elk.sh/1f-Cq5gpr03s6C0NZGdJH42LLFVp7UVn2YhSBQIdD7Po/1",
             success: function(result) {
                 
                 var output;
@@ -123,12 +148,13 @@ var getProfissionaisJSON = {
                     function() {
                         
                         var filterSelected = $(this).val();
+                        var nomeCondominio = getCookie("nomecondominio");
                         // console.log(filterSelected);
                         
                         output = '';
                         
                         for (var i in result) {
-                            if(result[i].blacklist == 0) {
+                            if(result[i].nomecondominio == nomeCondominio && result[i].blacklist == 0) {
                                 if(result[i].categoriaprofissional == filterSelected) {
                                     output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
                                     output += '<h3>'+ result[i].nomeprofissional +'</h3>';
@@ -177,16 +203,17 @@ var getProfissionaisJSON = {
         
         $.ajax({
             type: "GET",
-            url: "https://opensheet.elk.sh/1f-Cq5gpr03s6C0NZGdJH42LLFVp7UVn2YhSBQIdD7Po/Profissionais",
+            url: "https://opensheet.elk.sh/1f-Cq5gpr03s6C0NZGdJH42LLFVp7UVn2YhSBQIdD7Po/1",
             success: function(result) {
                 
                 // console.log(result);
                 var output = '';
+                var nomeCondominio = getCookie("nomecondominio");
 
                 result.reverse();
 
                 for (var i in result) {
-                    if(result[i].blacklist == 1) {
+                    if(result[i].nomecondominio == nomeCondominio && result[i].blacklist == 1) {
                         output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
                         output += '<h3>'+ result[i].nomeprofissional +'</h3>';
                         output += '<h4><strong>'+result[i].categoriaprofissional+'</strong></h4>';
@@ -211,5 +238,46 @@ var getProfissionaisJSON = {
         });
 
     }
-}
+};
 getProfissionaisJSON.init();
+
+// validate form
+var validateForm = document.getElementById("form");
+if(validateForm) {
+	validateForm.addEventListener("submit",function(event) {
+		
+        var response = grecaptcha.getResponse();
+        var nomeCondominio = getCookie("nomecondominio");
+        var hidden = $('input:hidden[name=nomecondominio]').val(nomeCondominio);
+
+        // console.log(hidden);
+        
+		if(response.length == 0) { 	
+			//reCaptcha not verified
+			alert('Para prosseguir, confirme que você não é um robô.');
+			event.preventDefault(); 
+			return false;
+		}
+	});
+};
+
+// ativar sorteio
+var ativarSorteio = {
+    init: function() {
+        this.engine();
+    },
+    engine: function() {
+        var nome = getCookie("nomecondominio");
+        var btn = $('#sorteio');
+        var logoParceiro = $('.logo-parceiro');
+
+        btn.hide();
+        logoParceiro.hide();
+
+        if(nome == 'Viva Benx Vila Mariana') {
+            btn.show();
+            logoParceiro.show();
+        }
+    }
+}
+ativarSorteio.init();

@@ -4,18 +4,19 @@
     
     
     
+    
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="utf-8">
-    <title>Me Indica Aê - Viva Benx Vila Mariana - Sorteio</title>
+    <title>Me Indica Aê - Indicações dos melhores Prestadores de Serviços feitas pelos moradores para o seu Condomínio - Sorteio</title>
     <meta name="author" content="Thiago Aguiar - thiago.aguiar86@gmail.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomímio - Viva Benx Vila Mariana">
     <meta name="keywords" content="">
 
     <meta property="og:image" content="https://meindicaae.netlify.app/images/logo_og.png">
-    <meta property="og:title" content="Me Indica Aê - Viva Benx Vila Mariana - Sorteio">
+    <meta property="og:title" content="Me Indica Aê - Indicações dos melhores Prestadores de Serviços feitas pelos moradores para o seu Condomínio - Sorteio">
     <meta property="og:description" content="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomímio - Viva Benx Vila Mariana">
     <meta property="og:url" content="https://meindicaae.netlify.app/sorteio.html">
 
@@ -43,7 +44,7 @@
     <!-- javascript -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
-<body>
+<body onload="checkCookie()">
 
     <section>
         <div class="container">
@@ -60,9 +61,10 @@
                             <img src="images/logo-benx-vlm.png">
                         </a>
                         <!-- logo -->
-                        <a href="/">
-                            <img src="images/logo.jpg" class="logo" alt="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio" data-toggle="tooltip" data-placement="bottom" title="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio">
+                        <a href="/tunel.html">
+                            <img src="images/logo.jpg" class="logo" alt="Me Indica Aê - Indicações dos melhores Prestadores de Serviços feitas pelos moradores para o seu Condomínio - Sorteio" data-toggle="tooltip" data-placement="bottom" title="Me Indica Aê - Indicações dos melhores Prestadores de Serviços feitas pelos moradores para o seu Condomínio - Sorteio">
                         </a>
+
                         <h1>Me Indica Aê!</h1>
                         <img src="images/bg_sorteio_cartao_ifood.png" alt="" class="img-fluid mb-5 sorteio" data-toggle="tooltip" data-placement="bottom" title="Me Indica Aê - Concorra a um iFood Card">
                         <h2>Concorra à um iFood Card!</h2>
@@ -76,7 +78,16 @@
                             <small>*Horário do sorteio à definir. Caso o vencedor não tenha adicionado o seu número de telefone na indicação, será consultado no grupo de moradores para receber seu código do cupom e aproveitar!</small>
                         </p>
                         <!-- <a class="btn btn-primary type-2 mt-3 d-block" role="button" disabled>Sorteio encerrado</a> -->
-                        <a href="/index.html" class="btn btn-primary mt-4 d-block" role="button">Não esqueça de indicar!</a>
+                        <a href="/tunel.html" class="btn btn-primary my-5 d-block" role="button">Não esqueça de indicar!</a>
+
+                        
+    <footer>
+        <p class="m-0">
+            <small>
+                <a href="#">Aviso de privacidade</a> <span>&bullet;</span> <a href="#">Termos de uso</a>
+            </small>
+        </p>
+    </footer>
                     </div>
                 </div>
             </div>
@@ -84,7 +95,6 @@
     </section>
 
     
-	
 
 	<!-- javascript -->
 	<script src="js/bundle.min.js"></script>

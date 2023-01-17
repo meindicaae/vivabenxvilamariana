@@ -1,4 +1,5 @@
-    {% set pageName = 'Me Indica Aê - Viva Benx Vila Mariana - Blacklist' %}
+    {% set pageName = 'Me Indica Aê - Indicações dos melhores Prestadores de Serviços feitas pelos moradores para o seu Condomínio - Blacklist' %}
+    {% set pageURL = 'https://meindicaae.netlify.app/blacklist.html' %}
     {% include "partials/elements/head.html" %}
 
     <section class="sucesso">
@@ -16,21 +17,23 @@
                             <img src="images/logo-benx-vlm.png">
                         </a>
                         <!-- logo -->
-                        <a href="/">
-                            <img src="images/logo.jpg" class="logo" alt="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio" data-toggle="tooltip" data-placement="bottom" title="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio">
+                        <a href="/tunel.html">
+                            <img src="images/logo.jpg" class="logo" alt="{{pageName}}" data-toggle="tooltip" data-placement="bottom" title="{{pageName}}">
                         </a>
 
                         <h1>Me Indica Aê!</h1>
                         <h2>Blacklist</h2>
 
-                        <p class="mb-4">Lista de profissionais e empresas que <b>não prestaram bons serviços</b> e/ou que tiveram <b>relatos de problemas</b> informados por moradores.</p>
+                        <p class="mb-4">Lista de profissionais e empresas que <b>não prestaram bons serviços</b> ou que tiveram <b>relatos de problemas</b> informados por moradores.</p>
                         
                         <!-- lista de profissionais indicados -->
                         <div class="row listaprofissionais" id="blacklist">
                             <span class="spinner">&nbsp;</span>
                         </div>
                         
-                        <a href="/relatar-problema.html" class="btn btn-dark mt-4 d-block" role="button">Relatar um problema</a>
+                        <a href="/relatar-problema.html" class="btn btn-dark my-5 d-block" role="button">Relatar um problema</a>
+
+                        {% include "partials/elements/footer.html" %}
                     </div>
                 </div>
             </div>

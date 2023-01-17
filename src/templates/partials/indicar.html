@@ -1,11 +1,12 @@
-    {% set pageName = 'Me Indica Aê - Viva Benx Vila Mariana - Indicar profissional' %}
+    {% set pageName = 'Me Indica Aê - Indicações dos melhores Prestadores de Serviços feitas pelos moradores para o seu Condomínio - Indicar profissional' %}
     {% set pageURL = 'https://meindicaae.netlify.app/indicar.html' %}
+    {% set checkCookie = 'checkCookie()' %}
     
     {% include "partials/elements/head.html" %}
 
     <section>
         <div class="container">
-            <div class="row justify-content-center"> <!-- vh-100 -->
+            <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-7 col-md-9 col-sm-12 col-12 align-self-center">
                     <div class="box text-center">
                         <!-- google safe browsing -->
@@ -18,14 +19,14 @@
                             <img src="images/logo-benx-vlm.png">
                         </a>
                         <!-- logo -->
-                        <a href="/">
-                            <img src="images/logo.jpg" class="logo" alt="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio" data-toggle="tooltip" data-placement="bottom" title="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio">
+                        <a href="/tunel.html">
+                            <img src="images/logo.jpg" class="logo" alt="{{pageName}}" data-toggle="tooltip" data-placement="bottom" title="{{pageName}}">
                         </a>
 
                         <h1>Me Indica Aê!</h1>
                         <p>Sabe aquele seu pedreiro de confiança ou pintor que deixou seu studio nos trincks!? <strong>Me Indica aê!</strong></p>
 
-                        <form action="https://api.sheetmonkey.io/form/eq6HsrSoaM9oFxP9531Lae" method="post" class="text-left mt-4 mb-0" id="form">
+                        <form action="https://api.sheetmonkey.io/form/eq6HsrSoaM9oFxP9531Lae" method="post" class="text-left my-5 mb-0" id="form">
 
                             <!-- dados do morador -->
                             <div class="form-row my-4">
@@ -58,7 +59,6 @@
                                 <div class="form-group col-md-6">
                                     <label for="categoriaprofissional">Profissão</label>
                                     <select class="form-control" id="categoriaprofissional" name="categoriaprofissional" required tabindex="5">
-                                        
                                         <option selected disabled>Todas as categorias</option>
                                         <option value="Arquiteto">Arquiteto</option>
                                         <option value="Automação residencial">Automação residencial</option>
@@ -89,7 +89,6 @@
                                         <option value="Restaurador em geral">Restaurador em geral</option>
                                         <option value="Revestimento">Revestimento</option>
                                         <option value="Vidraceiro">Vidraceiro</option>
-
                                     </select>
                                 </div>
                                 <!-- celular -->
@@ -124,6 +123,9 @@
                             <!-- datetime -->
                             <input type="hidden" name="datacadastro" value="x-sheetmonkey-current-date-time">
                             
+                            <!-- nome condominio -->
+                            <input type="hidden" name="nomecondominio" value="">
+                            
                             <!-- redirect -->
                             <input type="hidden" name="x-sheetmonkey-redirect" value="https://meindicaae.netlify.app/sucesso.html">
 
@@ -141,6 +143,8 @@
                             <!-- profissionais -->
                             <a href="/profissionais.html" class="btn btn-primary type-2 w-100">Ver profissionais</a>
                         </form>
+
+                        {% include "partials/elements/footer.html" %}
                     </div>
                 </div>
             </div>

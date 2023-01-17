@@ -2,20 +2,23 @@
 
             
     
+    
+    
+    
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="utf-8">
-    <title>Me Indica Aê - Viva Benx Vila Mariana - Blacklist - Relatar Problema</title>
+    <title>Me Indica Aê - Indicações dos melhores Prestadores de Serviços feitas pelos moradores para o seu Condomínio - Blacklist - Relatar Problema</title>
     <meta name="author" content="Thiago Aguiar - thiago.aguiar86@gmail.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomímio - Viva Benx Vila Mariana">
     <meta name="keywords" content="">
 
     <meta property="og:image" content="https://meindicaae.netlify.app/images/logo_og.png">
-    <meta property="og:title" content="Me Indica Aê - Viva Benx Vila Mariana - Blacklist - Relatar Problema">
+    <meta property="og:title" content="Me Indica Aê - Indicações dos melhores Prestadores de Serviços feitas pelos moradores para o seu Condomínio - Blacklist - Relatar Problema">
     <meta property="og:description" content="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomímio - Viva Benx Vila Mariana">
-    <meta property="og:url" content="">
+    <meta property="og:url" content="https://meindicaae.netlify.app/relatar-problema.html">
 
     <link rel="apple-touch-icon"        sizes="57x57"    href="images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon"        sizes="60x60"    href="images/favicon/apple-icon-60x60.png">
@@ -41,7 +44,7 @@
     <!-- javascript -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
-<body>
+<body onload="checkCookie()">
 
     <section class="sucesso">
         <div class="container">
@@ -58,15 +61,14 @@
                             <img src="images/logo-benx-vlm.png">
                         </a>
                         <!-- logo -->
-                        <a href="/">
-                            <img src="images/logo.jpg" class="logo" alt="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio" data-toggle="tooltip" data-placement="bottom" title="Me Indica Aê - Indicações de Prestadores de Serviços para o Condomínio">
+                        <a href="/tunel.html">
+                            <img src="images/logo.jpg" class="logo" alt="Me Indica Aê - Indicações dos melhores Prestadores de Serviços feitas pelos moradores para o seu Condomínio - Blacklist - Relatar Problema" data-toggle="tooltip" data-placement="bottom" title="Me Indica Aê - Indicações dos melhores Prestadores de Serviços feitas pelos moradores para o seu Condomínio - Blacklist - Relatar Problema">
                         </a>
 
                         <h1>Me Indica Aê!</h1>
                         <h2>Relatar um problema</h2>
 
                         <p class="text-left"><b>Poxa... :(</b> <br>Você teve problemas com um prestador de serviços? Então nos ajude! Relate resumidamente os problemas que teve para ficarmos atentos. Caso o profissional esteja na área de indicados, ao relatar um problema ele será removido dos indicados e adicionado na blacklist.</p> 
-                        <!-- <p class="text-left"><b>Lembre-se:</b> O nosso dinheirinho suado é muito valioso, não hesite em relatar o seu problema e compartilhar conosco.</p> -->
                         <p class="text-left">Por enquanto você poderá enviar um email para: <a href="mailto:contato.meindicaae@gmail.com?subject=[Me Indica Aê] - Blacklist - Relatar um problema"><b><u>contato.meindicaae@gmail.com</u></b></a> solicitando a publicação, enviando os dados como:</p>
                         
                         <hr>
@@ -84,7 +86,16 @@
                         <hr>
                         
                         <a href="#" class="btn btn-dark mt-4 d-block" role="button">Em breve</a>
-                        <a href="/" class="btn btn-primary type-2 mt-4 d-block" role="button">Voltar</a>
+                        <a href="/" class="btn btn-primary type-2 mt-4 mb-5 d-block" role="button">Voltar</a>
+
+                        
+    <footer>
+        <p class="m-0">
+            <small>
+                <a href="#">Aviso de privacidade</a> <span>&bullet;</span> <a href="#">Termos de uso</a>
+            </small>
+        </p>
+    </footer>
                     </div>
                 </div>
             </div>
@@ -92,7 +103,6 @@
     </section>
 
     
-	
 
 	<!-- javascript -->
 	<script src="js/bundle.min.js"></script>
