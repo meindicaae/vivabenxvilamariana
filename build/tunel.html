@@ -41,8 +41,19 @@
     <!-- stylesheet -->
     <link rel="stylesheet" href="css/bundle.min.css">
 
-    <!-- javascript -->
+    <!-- Google Recaptcha -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DXD0WBVPGZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-DXD0WBVPGZ');
+    </script>
+    
 </head>
 <body onload="checkCookie()">
 
@@ -69,12 +80,14 @@
                         <p>Sabe aquele seu pedreiro de confiança ou pintor que deixou seu studio nos trincks!? <strong>Me Indica aê!</strong></p>
 
                         <!-- indicar -->
-                        <div class="my-5">
+                        <div>
                             <a class="btn btn-primary my-2 w-100" href="/indicar.html" role="button">Quero indicar!</a>
                             <a class="btn btn-primary my-2 w-100" href="/profissionais.html" role="button">Profissionais</a>
                             <a class="btn btn-dark my-2 w-100" href="/blacklist.html" role="button">Blacklist</a>
                             <a class="btn btn-primary type-2 my-2 w-100" id="sorteio" href="/sorteio.html" role="button">Sorteio</a>
                         </div>
+
+                        <a class="mt-4 mb-5 d-block" href="javascript:void()" onclick="removeCookie()"><u>Ver outro condomínio</u></a>
 
                         
     <footer>

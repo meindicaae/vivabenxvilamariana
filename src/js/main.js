@@ -80,6 +80,11 @@ function checkCookie() {
     }
 };
 
+function removeCookie() {
+    document.cookie = "nomecondominio = ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+    window.location.replace("/");
+}
+
 // get json profissionais
 var getProfissionaisJSON = {
     init: function() {
@@ -98,12 +103,16 @@ var getProfissionaisJSON = {
                 
                 // console.log(result);
                 var nomeCondominio = getCookie("nomecondominio");
+                var verifica = 0;
                 var output = '';
 
                 result.reverse();
 
-                for (var i in result) {                            
+                for (var i in result) {
                     if(result[i].nomecondominio == nomeCondominio && result[i].blacklist == 0) {
+                        
+                        verifica = 1;
+
                         output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
                         output += '<h3>'+ result[i].nomeprofissional +'</h3>';
                         output += '<h4><strong>'+result[i].categoriaprofissional+'</strong></h4>';
@@ -124,7 +133,14 @@ var getProfissionaisJSON = {
                     }
                 }
 
-                el.html(output);
+                if(verifica == 1) {
+                    el.html(output);
+
+                } else {
+                    output = '<p>Não há indicações até o momento.</p>';
+                    el.html(output);
+                }
+                
             }
         });
 
@@ -139,7 +155,9 @@ var getProfissionaisJSON = {
             url: "https://opensheet.elk.sh/1f-Cq5gpr03s6C0NZGdJH42LLFVp7UVn2YhSBQIdD7Po/1",
             success: function(result) {
                 
-                var output;
+                var 
+                verifica,
+                output;
 
                 result.reverse();
 
@@ -149,13 +167,18 @@ var getProfissionaisJSON = {
                         
                         var filterSelected = $(this).val();
                         var nomeCondominio = getCookie("nomecondominio");
-                        // console.log(filterSelected);
                         
+                        // console.log(verifica);
+                        verifica = 0;
                         output = '';
                         
                         for (var i in result) {
                             if(result[i].nomecondominio == nomeCondominio && result[i].blacklist == 0) {
+
                                 if(result[i].categoriaprofissional == filterSelected) {
+
+                                    verifica = 1;
+
                                     output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
                                     output += '<h3>'+ result[i].nomeprofissional +'</h3>';
                                     output += '<h4><strong>'+result[i].categoriaprofissional+'</strong></h4>';
@@ -176,6 +199,8 @@ var getProfissionaisJSON = {
                                     
                                 } else if(filterSelected == 'todos') {
 
+                                    verifica = 1;
+
                                     output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
                                     output += '<h3>'+ result[i].nomeprofissional +'</h3>';
                                     output += '<h4><strong>'+result[i].categoriaprofissional+'</strong></h4>';
@@ -189,8 +214,14 @@ var getProfissionaisJSON = {
                                 }
                             }
                         }
+
+                        if(verifica == 1) {
+                            el.html(output);
         
-                        el.html(output);
+                        } else {
+                            output = '<p>Não há indicações até o momento.</p>';
+                            el.html(output);
+                        }
 
                     }
                 )
@@ -207,6 +238,7 @@ var getProfissionaisJSON = {
             success: function(result) {
                 
                 // console.log(result);
+                var verifica = 0;
                 var output = '';
                 var nomeCondominio = getCookie("nomecondominio");
 
@@ -214,6 +246,9 @@ var getProfissionaisJSON = {
 
                 for (var i in result) {
                     if(result[i].nomecondominio == nomeCondominio && result[i].blacklist == 1) {
+
+                        var verifica = 1;
+
                         output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
                         output += '<h3>'+ result[i].nomeprofissional +'</h3>';
                         output += '<h4><strong>'+result[i].categoriaprofissional+'</strong></h4>';
@@ -233,7 +268,14 @@ var getProfissionaisJSON = {
                     }
                 }
 
-                el.html(output);
+                if(verifica == 1) {
+                    el.html(output);
+
+                } else {
+                    output = '<p>Não há relatos de problemas até o momento.</p>';
+                    el.html(output);
+                }
+
             }
         });
 

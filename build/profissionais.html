@@ -41,8 +41,19 @@
     <!-- stylesheet -->
     <link rel="stylesheet" href="css/bundle.min.css">
 
-    <!-- javascript -->
+    <!-- Google Recaptcha -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DXD0WBVPGZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-DXD0WBVPGZ');
+    </script>
+    
 </head>
 <body onload="checkCookie()">
 
@@ -73,36 +84,37 @@
                         <div class="form-group text-left mb-4">
                             <label for="categoriaprofissional">Filtrar:</label>
                             <select class="form-control" id="categoriaprofissional" name="categoriaprofissional">
-                                    <option value="todos">Todas as categorias</option>
-                                    <option value="Arquiteto">Arquiteto</option>
-                                    <option value="Automação residencial">Automação residencial</option>
-                                    <option value="Artista plástico">Artista plástico</option>
-                                    <option value="Azulejista">Azulejista</option>
-                                    <option value="Chaveiro">Chaveiro</option>
-                                    <option value="Ceramista">Ceramista</option>
-                                    <option value="Cimenteiro">Cimenteiro</option>
-                                    <option value="Cortinas e Persianas">Cortinas e Persianas</option>
-                                    <option value="Dedetizadora">Dedetizadora</option>
-                                    <option value="Desentupidora">Desentupidora</option>
-                                    <option value="Designer de Interiores">Designer de Interiores</option>
-                                    <option value="Diarista">Diarista</option>
-                                    <option value="Eletricista">Eletricista</option>
-                                    <option value="Encanador">Encanador</option>
-                                    <option value="Engenheiro Civil">Engenheiro Civil</option>
-                                    <option value="Esquadrista">Esquadrista</option>
-                                    <option value="Fechadura digital">Fechadura digital</option>
-                                    <option value="Gesseiro">Gesseiro</option>
-                                    <option value="Iluminação">Iluminação</option>
-                                    <option value="Instalador em geral">Instalador em geral</option>
-                                    <option value="Marceneiro">Marceneiro</option>
-                                    <option value="Montador de Alvenarias e Estofados">Montador de Alvenarias e Estofados</option>
-                                    <option value="Pedreiro">Pedreiro</option>
-                                    <option value="Pintor">Pintor</option>
-                                    <option value="Quadro e Decoração">Quadro e Decoração</option>
-                                    <option value="Rede de proteção">Rede de proteção</option>
-                                    <option value="Restaurador em geral">Restaurador em geral</option>
-                                    <option value="Revestimento">Revestimento</option>
-                                    <option value="Vidraceiro">Vidraceiro</option>
+                                <option value="todos">Todas as categorias</option>
+                                <option value="Arquiteto">Arquiteto</option>
+<option value="Automação residencial">Automação residencial</option>
+<option value="Artista plástico">Artista plástico</option>
+<option value="Azulejista">Azulejista</option>
+<option value="Chaveiro">Chaveiro</option>
+<option value="Ceramista">Ceramista</option>
+<option value="Cimenteiro">Cimenteiro</option>
+<option value="Cortinas e Persianas">Cortinas e Persianas</option>
+<option value="Dedetizadora">Dedetizadora</option>
+<option value="Desentupidora">Desentupidora</option>
+<option value="Designer de Interiores">Designer de Interiores</option>
+<option value="Diarista">Diarista</option>
+<option value="Eletricista">Eletricista</option>
+<option value="Encanador">Encanador</option>
+<option value="Engenheiro Civil">Engenheiro Civil</option>
+<option value="Esquadrista">Esquadrista</option>
+<option value="Fechadura digital">Fechadura digital</option>
+<option value="Gesseiro">Gesseiro</option>
+<option value="Iluminação">Iluminação</option>
+<option value="Instalador em geral">Instalador em geral</option>
+<option value="Marceneiro">Marceneiro</option>
+<option value="Montador de Alvenarias e Estofados">Montador de Alvenarias e Estofados</option>
+<option value="Pedreiro">Pedreiro</option>
+<option value="Pintor">Pintor</option>
+<option value="Quadro e Decoração">Quadro e Decoração</option>
+<option value="Reciclagem e Entulho">Reciclagem e Entulho</option>
+<option value="Rede de proteção">Rede de proteção</option>
+<option value="Restaurador em geral">Restaurador em geral</option>
+<option value="Revestimento">Revestimento</option>
+<option value="Vidraceiro">Vidraceiro</option>
                             </select>
                         </div>
 
