@@ -147,6 +147,12 @@ textarea:focus:-ms-input-placeholder {
             background-color: $fourth;
         }
     }
+
+    .disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+        // opacity: 0.9;
+    }
 }
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }

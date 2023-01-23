@@ -1,0 +1,53 @@
+    {% set pageName = 'Me Indica Aê - Indicações dos melhores Prestadores de Serviços feitas pelos moradores para o seu Condomínio - Resultado do Sorteio' %}
+    {% set pageURL = 'https://meindicaae.netlify.app/resultado-sorteio.html' %}
+    {% set checkCookie = 'checkCookie()' %}
+    
+    {% include "partials/elements/head.html" %}
+
+    <section>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-7 col-md-9 col-sm-12 col-12 align-self-center">
+                    <div class="box text-center">
+                        <!-- google safe browsing -->
+                        <a href="https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fmeindicaae.netlify.app%2F" target="_blank" class="googlesafebrowsing">
+                            <img src="images/SafeBrowsing_Icon.png" alt="Google Safe Browsing" title="Google Site Seguro" class="img-fluid">
+                            <span>Site seguro</span>
+                        </a>
+                        <!-- parceiro -->
+                        <a href="https://www.vivabenx.com.br/empreendimento/viva-benx-vila-mariana" target="_blank" class="logo-parceiro">
+                            <img src="images/logo-benx-vlm.png">
+                        </a>
+                        <!-- logo -->
+                        <a href="/tunel.html">
+                            <img src="images/logo.jpg" class="logo" alt="{{pageName}}" data-toggle="tooltip" data-placement="bottom" title="{{pageName}}">
+                        </a>
+
+                        <h1>Me Indica Aê!</h1>
+                        <img src="images/bg_sorteio_cartao_ifood.png" alt="" class="img-fluid mb-5 sorteio" data-toggle="tooltip" data-placement="bottom" title="Me Indica Aê - Concorra a um iFood Card">
+                        <h2>Concorra à um iFood Card! - Resultado</h2>
+                        <p>O sorteio ocorrerá dia <b>30/01/2023</b>, à partir das <b>14h00</b>*. <br>Fique atento!</p>
+
+                        {# video #}
+                        <!-- 16:9 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="/images/resultado-sorteio.mp4" autoplay loop preload></iframe>
+                        </div>
+
+                        <p class="my-4">
+                            O resultado será disponibilizado abaixo através de um link (sorteador.com.br) para conferir se você foi o ganhador.
+                        </p>
+
+                        {# <a class="btn btn-primary type-2 mt-3 d-block" role="button" disabled>Sorteio encerrado</a> #}
+                        <a href="#" class="btn btn-primary my-5 d-block disabled" role="button">Ver resultado</a>
+
+                        <p class="mb-4">
+                            <small>Caso o ganhador não tenha informado o número de celular nas indicações, <a href="#"><u>clique aqui</u></a> informando seu nome e número do apto para resgatar seu prêmio!</small>
+                        </p>
+
+                        {% include "partials/elements/footer.html" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
