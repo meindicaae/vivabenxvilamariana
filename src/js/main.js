@@ -86,7 +86,6 @@ function changeInput(val) {
 // }
 
 document.cookie = "nomecondominio = ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
-window.location.replace("/");
 
 // get json profissionais
 var getProfissionaisJSON = {
