@@ -37,55 +37,65 @@ function changeInput(val) {
 	}
 };
 
-// function setSearch(value) {
-//     document.getElementById('nomecondominio').value = value;
-// 	document.getElementById("resultadoNomeCondominio").innerHTML = "";
-//     var nomeCondominio = value;
-//     var expireDate = new Date();
-//     expireDate.setMonth(expireDate.getMonth() + 1);
-//     document.cookie = 'nomecondominio='+ nomeCondominio +'; expires='+ expireDate.toGMTString();
-//     location.href = "/tunel.html";
-// };
+function setSearch(value) {
+    document.getElementById('nomecondominio').value = value;
+	document.getElementById("resultadoNomeCondominio").innerHTML = "";
+    var nomeCondominio = value;
+    var expireDate = new Date();
+    expireDate.setMonth(expireDate.getMonth() + 1);
+    document.cookie = 'nomecondominio='+ nomeCondominio +'; expires='+ expireDate.toGMTString();
+    location.href = "/tunel.html";
+};
 
-// function getCookie(cname) {
-//     var name = cname + "=";
-//     var decodedCookie = decodeURIComponent(document.cookie);
-//     var ca = decodedCookie.split(';');
+function setVLM(el) {
+    var nomeCondominio = el;
+    var expireDate = new Date();
+    expireDate.setMonth(expireDate.getMonth() + 1);
+    document.cookie = 'nomecondominio='+ nomeCondominio +'; expires='+ expireDate.toGMTString();
+    location.href = "/tunel.html";
+};
 
-//     for(var i = 0; i < ca.length; i++) {
-//         var c = ca[i];
-//         while (c.charAt(0) == ' ') {
-//             c = c.substring(1);
-//         }
-//         if (c.indexOf(name) == 0) {
-//             return c.substring(name.length, c.length);
-//         }
-//     }
-//     return "";
-// };
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
 
-// function checkCookie() {
-//     var nomeCondominio = getCookie("nomecondominio");
-//     var path = window.location.pathname;
-//     var page = path.split("/").pop();
-//     // console.log(page);
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+};
+
+function tempCondominio() {
+    document.getElementById("resultadoNomeCondominio").innerHTML += "<a href='javascript:void(0)' onclick='setSearch(\"" + autoCompleteResult[i] + "\")'>" + autoCompleteResult[i] + "</a>";
+}
+
+function checkCookie() {
+    var nomeCondominio = getCookie("nomecondominio");
+    var path = window.location.pathname;
+    var page = path.split("/").pop();
+    // console.log(page);
     
-//     if (nomeCondominio != "" && (page == 'index.html' || page == '')) {
-//         // console.log('redireciona pra página tunel. Cookie ativado');
-//         window.location.replace("/tunel.html");
+    if (nomeCondominio != "" && (page == 'index.html' || page == '')) {
+        // console.log('redireciona pra página tunel. Cookie ativado');
+        window.location.replace("/tunel.html");
 
-//     } else if(nomeCondominio == "" && page != 'index.html') {
-//         window.location.replace("/index.html");
+    } else if(nomeCondominio == "" && page != 'index.html') {
+        window.location.replace("/index.html");
 
-//     }
-// };
+    }
+};
 
-// function removeCookie() {
-//     document.cookie = "nomecondominio = ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
-//     window.location.replace("/");
-// }
-
-document.cookie = "nomecondominio = ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+function removeCookie() {
+    document.cookie = "nomecondominio = ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+    window.location.replace("/");
+}
 
 // get json profissionais
 var getProfissionaisJSON = {

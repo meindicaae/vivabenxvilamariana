@@ -9,15 +9,7 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-7 col-md-9 col-sm-12 col-12 align-self-center">
                     <div class="box text-center">
-                        <!-- logo -->
-                        <a href="#">
-                            <img src="images/logo.jpg" class="logo" alt="{{pageName}}" data-toggle="tooltip" data-placement="bottom" title="{{pageName}}">
-                        </a>
 
-                        <h1>Me Indica Aê!</h1>
-                        <p>Desativado por tempo indeterminado.</p>
-                        
-                        {#%
                         <!-- google safe browsing -->
                         <a href="https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fmeindicaae.netlify.app%2F" target="_blank" class="googlesafebrowsing">
                             <img src="images/SafeBrowsing_Icon.png" alt="Google Safe Browsing" title="Google Site Seguro" class="img-fluid">
@@ -32,6 +24,7 @@
                         <h1>Me Indica Aê!</h1>
                         <p>Sabe aquele seu pedreiro de confiança ou a arquiteta que deixou o seu apto nos trincks!? <strong>Me Indica aê!</strong></p>
 
+                        {#%
                         <!-- filtro -->
                         <div class="form-group mt-5 mb-0 filtro-condominio">
                             <label for="nomecondominio">Qual é o seu condomínio?</label>
@@ -40,13 +33,18 @@
                             <!-- resultado autocomplete -->
                             <div id="resultadoNomeCondominio"></div>
                         </div>
-
-                        
-                        <!-- fale conosco -->
-                        <p class="my-5">O condomínio não está na lista? <a href="mailto:contato.meindicaae@gmail.com'?subject=[Me Indica Aê!] - Solicitar cadastro de Condomínio"><b><u>Fale conosco</u></b></a>.</p>
                         %#}
 
-                        {#% include "partials/elements/footer.html" %#}
+                        
+
+                        <div class="form-group mt-5 mb-0 filtro-condominio">
+                            <a href="javascript:void(0)" onclick="setVLM('Viva Benx Vila Mariana')" class="btn btn-primary px-sm-5">Viva Benx Vila Mariana</a>
+                        </div>
+                        
+                        <!-- fale conosco -->
+                        <p class="my-5">Seu condomínio não está na lista? <a href="mailto:contato.meindicaae@gmail.com'?subject=[Me Indica Aê!] - Solicitar cadastro de Condomínio"><b><u>Fale conosco</u></b></a>.</p>
+
+                        {% include "partials/elements/footer.html" %}
                     </div>
                 </div>
             </div>
