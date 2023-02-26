@@ -127,7 +127,7 @@ var getProfissionaisJSON = {
 
                         output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
                         
-                        if(result[i].flag == 'admin') {
+                        if(result[i].nomemorador == 'Admin' || result[i].flag == 'admin') {
                             output += '<div class="ribbons"><span>Administração</span></div>';
                         } else if(result[i].flag == 'morador') {
                             output += '<div class="ribbons morador"><span>Indicado por morador</span></div>';
@@ -146,7 +146,13 @@ var getProfissionaisJSON = {
                         }
                         
                         output += '<hr>';
-                        output += '<p class="quemindicou"><small><strong>De: </strong><em>'+ result[i].nomemorador +'</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
+
+                        if(result[i].nomemorador == 'Admin' || result[i].flag == 'admin') {
+                            output += '<p class="quemindicou"><small><strong>De: </strong><em>Admin</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
+                        } else if(result[i].flag == 'morador') {
+                            output += '<p class="quemindicou"><small><strong>De: </strong><em>'+ result[i].nomemorador +'</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
+                        }
+                        
                         output += '<p class="comentario">'+ '<i class="fa fa-quote-left mr-2" aria-hidden="true"></i> ' + result[i].indicandoprofissional + '</p>';
                         output += '</div>';
                     }
