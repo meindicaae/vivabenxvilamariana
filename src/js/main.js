@@ -130,7 +130,7 @@ var getProfissionaisJSON = {
                         if(result[i].flag == 'admin') {
                             output += '<div class="ribbons"><span>Administração</span></div>';
                         } else if(result[i].flag == 'morador') {
-                            output += '<div class="ribbons morador"><span>Morador</span></div>';
+                            output += '<div class="ribbons morador"><span>Indicado por morador</span></div>';
                         }
 
                         output += '<h3>'+ result[i].nomeprofissional +'</h3>';
@@ -146,7 +146,7 @@ var getProfissionaisJSON = {
                         }
                         
                         output += '<hr>';
-                        output += '<p class="quemindicou"><small><strong>Por: </strong><em>'+ result[i].nomemorador +'</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
+                        output += '<p class="quemindicou"><small><strong>De: </strong><em>'+ result[i].nomemorador +'</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
                         output += '<p class="comentario">'+ '<i class="fa fa-quote-left mr-2" aria-hidden="true"></i> ' + result[i].indicandoprofissional + '</p>';
                         output += '</div>';
                     }
