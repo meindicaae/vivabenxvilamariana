@@ -126,6 +126,13 @@ var getProfissionaisJSON = {
                         verifica = 1;
 
                         output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
+                        
+                        if(result[i].flag == 'admin') {
+                            output += '<div class="ribbons"><span>Administração</span></div>';
+                        } else if(result[i].flag == 'morador') {
+                            output += '<div class="ribbons morador"><span>Morador</span></div>';
+                        }
+
                         output += '<h3>'+ result[i].nomeprofissional +'</h3>';
                         output += '<h4><strong>'+result[i].categoriaprofissional+'</strong></h4>';
                         output += '<p><i class="fa fa-whatsapp" aria-hidden="true"></i> <a href="https://api.whatsapp.com/send?phone=55'+result[i].celularprofissional+'&text=Olá, '+result[i].nomeprofissional+'!%20Peguei%20seu%20contato%20no%20Me%20Indica%20Aê,%20e%20eu%20gostaria%20de%20fazer%20um%20orçamento%20com%20você." target="_blank">'+ result[i].celularprofissional +'</a></p>';

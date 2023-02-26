@@ -64,7 +64,7 @@ textarea:focus:-ms-input-placeholder {
     div {
         border-radius: 10px;
         box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.1);
-        padding: 20px 15px;
+        padding: 25px 15px 20px;
         margin: 0 auto 20px;
     }
     p {
@@ -173,4 +173,27 @@ textarea:focus:-ms-input-placeholder {
     -webkit-animation: spin 0.7s linear infinite;
     -moz-animation: spin 0.7s linear infinite;
     animation: spin 0.7s linear infinite;
+}
+
+.ribbons {
+    position: absolute;
+    top: -12px;
+    right: -7px;
+    width: auto;
+    max-width: 200px;
+    background-color: $seventy;
+    border-radius: 5px !important;
+    margin: 0 !important;
+    padding: 4px 15px 6px !important;
+    text-align: center;
+    background-image: linear-gradient(to right, #431a88, #3a1378, #300d69, #27065a, #1e024c);
+    &.morador {
+        background-image: linear-gradient(to right, #0aa281, #38a488, #51a68e, #65a895, #77aa9b);
+    }
+    span{
+        font-size: 0.8em;
+        line-height: 1.2em;
+        font-weight: 600;
+        color: $white;
+    }
 }
