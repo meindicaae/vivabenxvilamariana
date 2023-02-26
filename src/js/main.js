@@ -205,6 +205,13 @@ var getProfissionaisJSON = {
                                     verifica = 1;
 
                                     output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
+
+                                    if(result[i].nomemorador == 'Admin' || result[i].flag == 'admin') {
+                                        output += '<div class="ribbons"><span>Administração</span></div>';
+                                    } else if(result[i].flag == 'morador') {
+                                        output += '<div class="ribbons morador"><span>Indicado por morador</span></div>';
+                                    }
+                                    
                                     output += '<h3>'+ result[i].nomeprofissional +'</h3>';
                                     output += '<h4><strong>'+result[i].categoriaprofissional+'</strong></h4>';
                                     output += '<p><i class="fa fa-whatsapp" aria-hidden="true"></i> <a href="https://api.whatsapp.com/send?phone=55'+result[i].celularprofissional+'&text=Olá, '+result[i].nomeprofissional+'!%20Peguei%20seu%20contato%20no%20Me%20Indica%20Aê,%20e%20eu%20gostaria%20de%20fazer%20um%20orçamento%20com%20você." target="_blank">'+ result[i].celularprofissional +'</a></p>';
@@ -218,7 +225,13 @@ var getProfissionaisJSON = {
                                     }
 
                                     output += '<hr>';
-                                    output += '<p class="quemindicou"><small><strong>Por: </strong><em>'+ result[i].nomemorador +'</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
+                                    
+                                    if(result[i].nomemorador == 'Admin' || result[i].flag == 'admin') {
+                                        output += '<p class="quemindicou"><small><strong>De: </strong><em>Admin</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
+                                    } else if(result[i].flag == 'morador') {
+                                        output += '<p class="quemindicou"><small><strong>De: </strong><em>'+ result[i].nomemorador +'</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
+                                    }
+
                                     output += '<p class="comentario">'+ '<i class="fa fa-quote-left mr-2" aria-hidden="true"></i> ' + result[i].indicandoprofissional + '</p>';
                                     output += '</div>';
                                     
