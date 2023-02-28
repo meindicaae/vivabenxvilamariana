@@ -65,7 +65,7 @@ textarea:focus:-ms-input-placeholder {
         border-radius: 10px;
         box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.1);
         padding: 25px 15px 20px;
-        margin: 0 auto 20px;
+        margin: 0 auto 35px;
     }
     p {
         font-size: 0.9em;
@@ -177,7 +177,7 @@ textarea:focus:-ms-input-placeholder {
 
 .ribbons {
     position: absolute;
-    top: -12px;
+    top: -20px;
     right: -7px;
     width: auto;
     max-width: 200px;
@@ -195,5 +195,19 @@ textarea:focus:-ms-input-placeholder {
         line-height: 1.2em;
         font-weight: 600;
         color: $white;
+    }
+}
+
+.subtitle {
+    margin: 0 auto 50px;
+    padding: 0;
+    font-size: 0.85em;
+    line-height: 1.4em;
+}
+
+.relatar-problema {
+    a {
+        font-size: 0.9em !important;
+        text-decoration: underline;
     }
 }

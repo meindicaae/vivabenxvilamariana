@@ -9,27 +9,20 @@
             <div class="row justify-content-center"> <!-- vh-100 -->
                 <div class="col-xl-6 col-lg-7 col-md-9 col-sm-12 col-12">
                     <div class="box text-center">
-                        <!-- google safe browsing -->
-                        <a href="https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fmeindicaae.netlify.app%2F" target="_blank" class="googlesafebrowsing">
-                            <img src="images/SafeBrowsing_Icon.png" alt="Google Safe Browsing" title="Google Site Seguro" class="img-fluid">
-                            <span>Site seguro</span>
-                        </a>
+
+                        {% include "partials/elements/header.html" %}
+                        
+                        <h2>Galera indicada por nós!</h2>
+                        <p>Veja os últimos adicionados recentemente. Também poderá buscar pela categoria:</p>
+
                         <!-- parceiro -->
                         <a href="https://www.vivabenx.com.br/empreendimento/viva-benx-vila-mariana" target="_blank" class="logo-parceiro">
                             <img src="images/logo-benx-vlm.png">
                         </a>
-                        <!-- logo -->
-                        <a href="/tunel.html">
-                            <img src="images/logo.jpg" class="logo" alt="{{pageName}}" data-toggle="tooltip" data-placement="bottom" title="{{pageName}}">
-                        </a>
-
-                        <h1>Me Indica Aê!</h1>
-                        <h2>Galera indicada por nós!</h2>
-                        <p>Veja os últimos adicionados recentemente. <br>Também poderá buscar por categoria:</p>
                         
                         <!-- fitro -->
                         <div class="form-group text-left mb-5">
-                            <label for="categoriaprofissional">Filtrar:</label>
+                            <label for="categoriaprofissional"><b>Filtrar:</b></label>
                             <select class="form-control" id="categoriaprofissional" name="categoriaprofissional">
                                 <option value="todos">Todas as categorias</option>
                                 {% include "partials/elements/categorias.html" %}
@@ -40,7 +33,12 @@
                         <div class="row listaprofissionais" id="listaprofissionais">
                             <span class="spinner">&nbsp;</span>
                         </div>
-                        <a href="/indicar.html" class="btn btn-primary my-5 d-block w-100" role="button">Quero indicar!</a>
+
+                        <!-- indicar -->
+                        <a href="/indicar.html" class="btn btn-primary my-3 d-block w-100" role="button">Quero indicar!</a>
+
+                        <!-- voltar -->
+                        <a href="/tunel.html" class="btn btn-primary type-2 w-100 mt-3">Voltar</a>
 
                         {% include "partials/elements/footer.html" %}
                     </div>

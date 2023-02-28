@@ -154,6 +154,10 @@ var getProfissionaisJSON = {
                         }
                         
                         output += '<p class="comentario">'+ '<i class="fa fa-quote-left mr-2" aria-hidden="true"></i> ' + result[i].indicandoprofissional + '</p>';
+                        
+                        output += '<hr>';
+                        output += '<p class="relatar-problema"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <strong><a href="/relatar-problema.html">Relatar um problema</a></strong></p>';
+                        
                         output += '</div>';
                     }
                 }
@@ -233,6 +237,10 @@ var getProfissionaisJSON = {
                                     }
 
                                     output += '<p class="comentario">'+ '<i class="fa fa-quote-left mr-2" aria-hidden="true"></i> ' + result[i].indicandoprofissional + '</p>';
+
+                                    output += '<hr>';
+                                    output += '<p class="relatar-problema"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <strong><a href="/relatar-problema.html">Relatar um problema</a></strong></p>';
+                                    
                                     output += '</div>';
                                     
                                 } else if(filterSelected == 'todos') {
@@ -261,6 +269,10 @@ var getProfissionaisJSON = {
                                     }
 
                                     output += '<p class="comentario">'+ '<i class="fa fa-quote-left mr-2" aria-hidden="true"></i> ' + result[i].indicandoprofissional + '</p>';
+                                    
+                                    output += '<hr>';
+                                    output += '<p class="relatar-problema"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <strong><a href="/relatar-problema.html">Relatar um problema</a></strong></p>';
+
                                     output += '</div>';
                                 }
                             }
@@ -315,6 +327,10 @@ var getProfissionaisJSON = {
                         
                         output += '<hr>';
                         output += '<p class="quemindicou"><small><strong>Por: </strong><em>Anônimo</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
+                        
+                        output += '<hr>';
+                        output += '<p class="relatar-problema"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <strong><a href="/relatar-problema.html">Relatar um problema</a></strong></p>';
+                        
                         output += '</div>';
                     }
                 }

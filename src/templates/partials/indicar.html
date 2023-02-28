@@ -9,27 +9,22 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-7 col-md-9 col-sm-12 col-12 align-self-center">
                     <div class="box text-center">
-                        <!-- google safe browsing -->
-                        <a href="https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fmeindicaae.netlify.app%2F" target="_blank" class="googlesafebrowsing">
-                            <img src="images/SafeBrowsing_Icon.png" alt="Google Safe Browsing" title="Google Site Seguro" class="img-fluid">
-                            <span>Site seguro</span>
-                        </a>
+
+                        {% include "partials/elements/header.html" %}
+                        
+                        <h2>Cadastrar profissional</h2>
+                        <p>Preencha abaixo as informações necessárias:</p>
+
                         <!-- parceiro -->
                         <a href="https://www.vivabenx.com.br/empreendimento/viva-benx-vila-mariana" target="_blank" class="logo-parceiro">
                             <img src="images/logo-benx-vlm.png">
                         </a>
-                        <!-- logo -->
-                        <a href="/tunel.html">
-                            <img src="images/logo.jpg" class="logo" alt="{{pageName}}" data-toggle="tooltip" data-placement="bottom" title="{{pageName}}">
-                        </a>
-
-                        <h1>Me Indica Aê!</h1>
-                        <p>Sabe aquele seu pedreiro de confiança ou a arquiteta que deixou o seu apto nos trincks!? <strong>Me Indica Aê!</strong></p>
-
-                        <form action="https://api.sheetmonkey.io/form/eq6HsrSoaM9oFxP9531Lae" method="post" class="text-left my-5 mb-0" id="form">
+                        
+                        <form action="https://api.sheetmonkey.io/form/eq6HsrSoaM9oFxP9531Lae" method="post" class="text-left mt-5" id="form">
 
                             <!-- dados do morador -->
                             <div class="form-row my-4">
+                                <h3 class="text-center mb-3">Dados do(a) morador(a)</h3>
                                 <!-- nome -->
                                 <div class="form-group col-md-12">
                                     <label for="nomemorador">Nome do morador</label>
@@ -49,7 +44,7 @@
                             
                             <!-- dados do profissional -->
                             <div class="form-row my-4">
-                                <h2>Dados do(a) profissional</h2>
+                                <h3 class="text-center mb-3">Dados do(a) profissional</h3>
                                 <!-- nome -->
                                 <div class="form-group col-md-12">
                                     <label for="nomeprofissional">Nome da empresa ou profissional</label>
@@ -115,8 +110,8 @@
                                 <hr>
                             </div>
 
-                            <!-- profissionais -->
-                            <a href="/profissionais.html" class="btn btn-primary type-2 w-100">Ver profissionais</a>
+                            <!-- voltar -->
+                            <a href="/tunel.html" class="btn btn-primary type-2 w-100">Voltar</a>
                         </form>
 
                         {% include "partials/elements/footer.html" %}

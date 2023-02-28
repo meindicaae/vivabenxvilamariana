@@ -7,31 +7,27 @@
             <div class="row justify-content-center vh-100">
                 <div class="col-xl-6 col-lg-7 col-md-9 col-sm-12 col-12 align-self-center">
                     <div class="box text-center">
-                        <!-- google safe browsing -->
-                        <a href="https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fmeindicaae.netlify.app%2F" target="_blank" class="googlesafebrowsing">
-                            <img src="images/SafeBrowsing_Icon.png" alt="Google Safe Browsing" title="Google Site Seguro" class="img-fluid">
-                            <span>Site seguro</span>
-                        </a>
+
+                        {% include "partials/elements/header.html" %}
+
+                        <h2>Blacklist</h2>
+
+                        <p class="mb-4">Lista de profissionais e empresas que <b>não prestaram bons serviços</b> ou que tiveram <b>relatos de problemas</b> informados por moradores.</p>
+
                         <!-- parceiro -->
                         <a href="https://www.vivabenx.com.br/empreendimento/viva-benx-vila-mariana" target="_blank" class="logo-parceiro">
                             <img src="images/logo-benx-vlm.png">
                         </a>
-                        <!-- logo -->
-                        <a href="/tunel.html">
-                            <img src="images/logo.jpg" class="logo" alt="{{pageName}}" data-toggle="tooltip" data-placement="bottom" title="{{pageName}}">
-                        </a>
-
-                        <h1>Me Indica Aê!</h1>
-                        <h2>Blacklist</h2>
-
-                        <p class="mb-4">Lista de profissionais e empresas que <b>não prestaram bons serviços</b> ou que tiveram <b>relatos de problemas</b> informados por moradores.</p>
                         
                         <!-- lista de profissionais indicados -->
                         <div class="row listaprofissionais" id="blacklist">
                             <span class="spinner">&nbsp;</span>
                         </div>
                         
-                        <a href="/relatar-problema.html" class="btn btn-dark my-5 d-block" role="button">Relatar um problema</a>
+                        <a href="/relatar-problema.html" class="btn btn-dark my-3 d-block" role="button">Relatar um problema</a>
+
+                        <!-- voltar -->
+                        <a href="/tunel.html" class="btn btn-primary type-2 w-100 mt-3">Voltar</a>
 
                         {% include "partials/elements/footer.html" %}
                     </div>

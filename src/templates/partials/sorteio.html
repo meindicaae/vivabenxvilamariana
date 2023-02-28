@@ -9,21 +9,14 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-7 col-md-9 col-sm-12 col-12 align-self-center">
                     <div class="box text-center">
-                        <!-- google safe browsing -->
-                        <a href="https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fmeindicaae.netlify.app%2F" target="_blank" class="googlesafebrowsing">
-                            <img src="images/SafeBrowsing_Icon.png" alt="Google Safe Browsing" title="Google Site Seguro" class="img-fluid">
-                            <span>Site seguro</span>
-                        </a>
+
+                        {% include "partials/elements/header.html" %}
+
                         <!-- parceiro -->
                         <a href="https://www.vivabenx.com.br/empreendimento/viva-benx-vila-mariana" target="_blank" class="logo-parceiro">
                             <img src="images/logo-benx-vlm.png">
                         </a>
-                        <!-- logo -->
-                        <a href="/tunel.html">
-                            <img src="images/logo.jpg" class="logo" alt="{{pageName}}" data-toggle="tooltip" data-placement="bottom" title="{{pageName}}">
-                        </a>
 
-                        <h1>Me Indica Aê!</h1>
                         <img src="images/bg_sorteio_cartao_ifood.png" alt="" class="img-fluid mb-5 sorteio" data-toggle="tooltip" data-placement="bottom" title="Me Indica Aê - Concorra a um iFood Card">
                         <h2>Concorra à um iFood Card!</h2>
                         <p>Os vizinhos que indicarem bons profissionais de confiança para o condomínio Viva Benx Vila Mariana estarão participando gratuitamente do sorteio para concorrerem à um iFood Card no valor de:</p>
@@ -38,7 +31,10 @@
 
                         {# <a href="/resultado-sorteio.html" class="btn btn-primary my-5 d-block" role="button">Ver resultado</a> #}
 
-                        <a class="btn btn-primary type-2 my-5 d-block" role="button" disabled>Sorteio encerrado</a>
+                        <a class="btn btn-primary my-3 d-block" role="button" disabled>Sorteio encerrado</a>
+                        
+                        <!-- voltar -->
+                        <a href="/tunel.html" class="btn btn-primary type-2 w-100 mt-3">Voltar</a>
 
                         {% include "partials/elements/footer.html" %}
                     </div>
