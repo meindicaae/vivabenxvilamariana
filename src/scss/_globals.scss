@@ -239,6 +239,13 @@ BOOTSTRAP 4 BREAKPOINTS
 	}
 }
 
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+	br {
+		display: none;
+	}
+}
+
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media (min-width: 768px) {
 	.tunel {

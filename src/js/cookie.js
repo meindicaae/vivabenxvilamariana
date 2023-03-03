@@ -8,7 +8,7 @@ window.cookieconsent.initialise({
 			link: "#010066",
 		},
 		button: {
-			background: "#0AA281",
+			background: "#1e024c",
 			border: "transparent",
 			text: "#FFF",
 		},
@@ -34,5 +34,5 @@ window.cookieconsent.initialise({
 	  'enable cookies' : 'disable cookies');
 	},
 	// "theme": "edgeless",
-	position: "bottom-right"
+	position: "bottom-left"
 });

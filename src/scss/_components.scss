@@ -211,3 +211,56 @@ textarea:focus:-ms-input-placeholder {
         text-decoration: underline;
     }
 }
+.gotop {
+    position: fixed;
+    z-index: 10000;
+    bottom: 30px;
+    right: 20px;
+    margin: 0;
+    width: 50px;
+    height: 50px;
+    background-color: $seventy;
+    border-radius: 50%;
+    .fa {
+        font-size: 2em;
+        font-weight: 600;
+        color: $white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -18px 0 0 -10px;
+    }
+}
+
+/*
+####################################################
+BOOTSTRAP 4 BREAKPOINTS
+####################################################
+*/
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+    .gotop {
+        right: 50%;
+        margin: 0 -350px 0 0;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .gotop {
+        margin: 0 -400px 0 0;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
