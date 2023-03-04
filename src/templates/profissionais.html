@@ -5,3 +5,9 @@
         {% include "partials/profissionais.html" %}
 
     {% endblock %}
+
+    {% block script %}
+    <script>
+        getProfissionaisJSON.init();
+    </script>
+    {% endblock %}

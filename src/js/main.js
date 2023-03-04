@@ -360,7 +360,6 @@ var getProfissionaisJSON = {
         console.log(getParameter);
     }
 };
-getProfissionaisJSON.init();
 
 // validate form
 var validateForm = document.getElementById("form");
