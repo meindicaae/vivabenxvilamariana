@@ -30,16 +30,16 @@ function matchCondominio(input) {
 };
 
 function changeInput(val) {
-	var autoCompleteResult = matchCondominio(val);
-	document.getElementById("resultadoNomeCondominio").innerHTML = "";
-	for (var i = 0, limit = 10, len = autoCompleteResult.length; i < len  && i < limit; i++) {
-		document.getElementById("resultadoNomeCondominio").innerHTML += "<a href='javascript:void(0)' onclick='setSearch(\"" + autoCompleteResult[i] + "\")'>" + autoCompleteResult[i] + "</a>";
+	var autoCompleteresult = matchCondominio(val);
+	document.getElementById("result['rows']adoNomeCondominio").innerHTML = "";
+	for (var i = 0, limit = 10, len = autoCompleteresult['rows'].length; i < len  && i < limit; i++) {
+		document.getElementById("result['rows']adoNomeCondominio").innerHTML += "<a href='javascript:void(0)' onclick='setSearch(\"" + autoCompleteresult['rows'][i] + "\")'>" + autoCompleteresult['rows'][i] + "</a>";
 	}
 };
 
 function setSearch(value) {
     document.getElementById('nomecondominio').value = value;
-	document.getElementById("resultadoNomeCondominio").innerHTML = "";
+	document.getElementById("result['rows']adoNomeCondominio").innerHTML = "";
     var nomeCondominio = value;
     var expireDate = new Date();
     expireDate.setMonth(expireDate.getMonth() + 1);
@@ -73,7 +73,7 @@ function getCookie(cname) {
 };
 
 function tempCondominio() {
-    document.getElementById("resultadoNomeCondominio").innerHTML += "<a href='javascript:void(0)' onclick='setSearch(\"" + autoCompleteResult[i] + "\")'>" + autoCompleteResult[i] + "</a>";
+    document.getElementById("result['rows']adoNomeCondominio").innerHTML += "<a href='javascript:void(0)' onclick='setSearch(\"" + autoCompleteresult['rows'][i] + "\")'>" + autoCompleteresult['rows'][i] + "</a>";
 }
 
 function checkCookie() {
@@ -110,53 +110,55 @@ var getProfissionaisJSON = {
         
         $.ajax({
             type: "GET",
-            url: "https://opensheet.elk.sh/1f-Cq5gpr03s6C0NZGdJH42LLFVp7UVn2YhSBQIdD7Po/1",
+            url: "https://gsx2json.com/api?id=1f-Cq5gpr03s6C0NZGdJH42LLFVp7UVn2YhSBQIdD7Po&sheet=Profissionais&columns=false",
             success: function(result) {
                 
-                // console.log(result);
+                // console.log(result['rows']);
                 var nomeCondominio = getCookie("nomecondominio");
                 var verifica = 0;
                 var output = '';
 
-                result.reverse();
+                result['rows'].reverse();
 
-                for (var i in result) {
-                    if(result[i].nomecondominio == nomeCondominio && result[i].blacklist == 0) {
-                        
+                for (var i in result['rows']) {
+                    if(result['rows'][i].nomecondominio == nomeCondominio && result['rows'][i].blacklist == 0) {
+
                         verifica = 1;
+
+                        var replaceContact = result['rows'][i].celularprofissional.replace(/([^\w ]|-)/g, '').replaceAll(' ', '');
 
                         output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
                         
-                        if(result[i].nomemorador == 'Admin' || result[i].flag == 'admin') {
+                        if(result['rows'][i].nomemorador == 'Admin' || result['rows'][i].flag == 'admin') {
                             output += '<div class="ribbons"><span>Administração</span></div>';
-                        } else if(result[i].flag == 'morador') {
+                        } else if(result['rows'][i].flag == 'morador') {
                             output += '<div class="ribbons morador"><span>Indicado por morador</span></div>';
                         }
 
-                        output += '<h3>'+ result[i].nomeprofissional +'</h3>';
-                        output += '<h4><strong>'+result[i].categoriaprofissional+'</strong></h4>';
-                        output += '<p><i class="fa fa-whatsapp" aria-hidden="true"></i> <a href="https://api.whatsapp.com/send?phone=55'+result[i].celularprofissional+'&text=Olá, '+result[i].nomeprofissional+'!%20Peguei%20seu%20contato%20no%20Me%20Indica%20Aê,%20e%20eu%20gostaria%20de%20fazer%20um%20orçamento%20com%20você." target="_blank">'+ result[i].celularprofissional +'</a></p>';
+                        output += '<h3>'+ result['rows'][i].nomeprofissional +'</h3>';
+                        output += '<h4><strong>'+result['rows'][i].categoriaprofissional+'</strong></h4>';
+                        output += '<p><i class="fa fa-whatsapp" aria-hidden="true"></i> <a href="https://api.whatsapp.com/send?phone=55'+replaceContact+'&text=Olá, '+result['rows'][i].nomeprofissional+'!%20Peguei%20seu%20contato%20no%20Me%20Indica%20Aê,%20e%20eu%20gostaria%20de%20fazer%20um%20orçamento%20com%20você." target="_blank">'+ result['rows'][i].celularprofissional +'</a></p>';
 
-                        if(result[i].emailprofissional != '') {
-                            output += '<p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:'+result[i].emailprofissional+'?subject=Me Indica Aê - Solicitação de Orçamento">Enviar email</a></p>';
+                        if(result['rows'][i].emailprofissional != '') {
+                            output += '<p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:'+result['rows'][i].emailprofissional+'?subject=Me Indica Aê - Solicitação de Orçamento">Enviar email</a></p>';
                         }
                         
-                        if(result[i].siteprofissional != '') {
-                            output += '<p class="siteprofissional"><i class="fa fa-globe" aria-hidden="true"></i> <a href='+ result[i].siteprofissional +' target="_blank"> Acessar o site </a></p>';
+                        if(result['rows'][i].siteprofissional != '') {
+                            output += '<p class="siteprofissional"><i class="fa fa-globe" aria-hidden="true"></i> <a href='+ result['rows'][i].siteprofissional +' target="_blank"> Acessar o site </a></p>';
                         }
                         
                         output += '<hr>';
 
-                        if(result[i].nomemorador == 'Admin' || result[i].flag == 'admin') {
-                            output += '<p class="quemindicou"><small><strong>De: </strong><em>Admin</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
-                        } else if(result[i].flag == 'morador') {
-                            output += '<p class="quemindicou"><small><strong>De: </strong><em>'+ result[i].nomemorador +'</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
+                        if(result['rows'][i].nomemorador == 'Admin' || result['rows'][i].flag == 'admin') {
+                            output += '<p class="quemindicou"><small><strong>De: </strong><em>Admin</em> em '+ new Date(result['rows'][i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
+                        } else if(result['rows'][i].flag == 'morador') {
+                            output += '<p class="quemindicou"><small><strong>De: </strong><em>'+ result['rows'][i].nomemorador +'</em> em '+ new Date(result['rows'][i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
                         }
                         
-                        output += '<p class="comentario">'+ '<i class="fa fa-quote-left mr-2" aria-hidden="true"></i> ' + result[i].indicandoprofissional + '</p>';
+                        output += '<p class="comentario">'+ '<i class="fa fa-quote-left mr-2" aria-hidden="true"></i> ' + result['rows'][i].indicandoprofissional + '</p>';
                         
                         output += '<hr>';
-                        output += '<p class="relatar-problema"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <strong><a href="/relatar-problema.html">Relatar um problema</a></strong></p>';
+                        output += '<p class="relatar-problema"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <strong><a href="/relatar-problema.html?p=' + replaceContact + '">Relatar um problema</a></strong></p>';
                         
                         output += '</div>';
                     }
@@ -181,14 +183,14 @@ var getProfissionaisJSON = {
 
         $.ajax({
             type: "GET",
-            url: "https://opensheet.elk.sh/1f-Cq5gpr03s6C0NZGdJH42LLFVp7UVn2YhSBQIdD7Po/1",
+            url: "https://gsx2json.com/api?id=1f-Cq5gpr03s6C0NZGdJH42LLFVp7UVn2YhSBQIdD7Po&sheet=Profissionais&columns=false",
             success: function(result) {
                 
                 var 
                 verifica,
                 output;
 
-                result.reverse();
+                result['rows'].reverse();
 
                 filter.on(
                     'change',
@@ -201,77 +203,81 @@ var getProfissionaisJSON = {
                         verifica = 0;
                         output = '';
                         
-                        for (var i in result) {
-                            if(result[i].nomecondominio == nomeCondominio && result[i].blacklist == 0) {
+                        for (var i in result['rows']) {
+                            if(result['rows'][i].nomecondominio == nomeCondominio && result['rows'][i].blacklist == 0) {
 
-                                if(result[i].categoriaprofissional == filterSelected) {
+                                if(result['rows'][i].categoriaprofissional == filterSelected) {
 
                                     verifica = 1;
+                                    
+                                    var replaceContact = result['rows'][i].celularprofissional.replace(/([^\w ]|-)/g, '').replaceAll(' ', '');
 
                                     output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
 
-                                    if(result[i].nomemorador == 'Admin' || result[i].flag == 'admin') {
+                                    if(result['rows'][i].nomemorador == 'Admin' || result['rows'][i].flag == 'admin') {
                                         output += '<div class="ribbons"><span>Administração</span></div>';
-                                    } else if(result[i].flag == 'morador') {
+                                    } else if(result['rows'][i].flag == 'morador') {
                                         output += '<div class="ribbons morador"><span>Indicado por morador</span></div>';
                                     }
 
-                                    output += '<h3>'+ result[i].nomeprofissional +'</h3>';
-                                    output += '<h4><strong>'+result[i].categoriaprofissional+'</strong></h4>';
-                                    output += '<p><i class="fa fa-whatsapp" aria-hidden="true"></i> <a href="https://api.whatsapp.com/send?phone=55'+result[i].celularprofissional+'&text=Olá, '+result[i].nomeprofissional+'!%20Peguei%20seu%20contato%20no%20Me%20Indica%20Aê,%20e%20eu%20gostaria%20de%20fazer%20um%20orçamento%20com%20você." target="_blank">'+ result[i].celularprofissional +'</a></p>';
+                                    output += '<h3>'+ result['rows'][i].nomeprofissional +'</h3>';
+                                    output += '<h4><strong>'+result['rows'][i].categoriaprofissional+'</strong></h4>';
+                                    output += '<p><i class="fa fa-whatsapp" aria-hidden="true"></i> <a href="https://api.whatsapp.com/send?phone=55'+replaceContact+'&text=Olá, '+result['rows'][i].nomeprofissional+'!%20Peguei%20seu%20contato%20no%20Me%20Indica%20Aê,%20e%20eu%20gostaria%20de%20fazer%20um%20orçamento%20com%20você." target="_blank">'+ result['rows'][i].celularprofissional +'</a></p>';
                                     
-                                    if(result[i].emailprofissional != '') {
-                                        output += '<p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:'+result[i].emailprofissional+'?subject=Me Indica Aê - Solicitação de Orçamento">Enviar email</a></p>';
+                                    if(result['rows'][i].emailprofissional != '') {
+                                        output += '<p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:'+result['rows'][i].emailprofissional+'?subject=Me Indica Aê - Solicitação de Orçamento">Enviar email</a></p>';
                                     }
                                     
-                                    if(result[i].siteprofissional != '') {
-                                        output += '<p class="siteprofissional"><i class="fa fa-globe" aria-hidden="true"></i> <a href='+ result[i].siteprofissional +' target="_blank">Acessar o site</a></p>';
+                                    if(result['rows'][i].siteprofissional != '') {
+                                        output += '<p class="siteprofissional"><i class="fa fa-globe" aria-hidden="true"></i> <a href='+ result['rows'][i].siteprofissional +' target="_blank">Acessar o site</a></p>';
                                     }
 
                                     output += '<hr>';
                                     
-                                    if(result[i].nomemorador == 'Admin' || result[i].flag == 'admin') {
-                                        output += '<p class="quemindicou"><small><strong>De: </strong><em>Admin</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
-                                    } else if(result[i].flag == 'morador') {
-                                        output += '<p class="quemindicou"><small><strong>De: </strong><em>'+ result[i].nomemorador +'</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
+                                    if(result['rows'][i].nomemorador == 'Admin' || result['rows'][i].flag == 'admin') {
+                                        output += '<p class="quemindicou"><small><strong>De: </strong><em>Admin</em> em '+ new Date(result['rows'][i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
+                                    } else if(result['rows'][i].flag == 'morador') {
+                                        output += '<p class="quemindicou"><small><strong>De: </strong><em>'+ result['rows'][i].nomemorador +'</em> em '+ new Date(result['rows'][i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
                                     }
 
-                                    output += '<p class="comentario">'+ '<i class="fa fa-quote-left mr-2" aria-hidden="true"></i> ' + result[i].indicandoprofissional + '</p>';
+                                    output += '<p class="comentario">'+ '<i class="fa fa-quote-left mr-2" aria-hidden="true"></i> ' + result['rows'][i].indicandoprofissional + '</p>';
 
                                     output += '<hr>';
-                                    output += '<p class="relatar-problema"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <strong><a href="/relatar-problema.html">Relatar um problema</a></strong></p>';
+                                    output += '<p class="relatar-problema"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <strong><a href="/relatar-problema.html?p=' + replaceContact + '">Relatar um problema</a></strong></p>';
                                     
                                     output += '</div>';
                                     
                                 } else if(filterSelected == 'todos') {
 
+                                    var replaceContact = result['rows'][i].celularprofissional.replace(/([^\w ]|-)/g, '').replaceAll(' ', '');
+
                                     verifica = 1;
 
                                     output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
 
-                                    if(result[i].nomemorador == 'Admin' || result[i].flag == 'admin') {
+                                    if(result['rows'][i].nomemorador == 'Admin' || result['rows'][i].flag == 'admin') {
                                         output += '<div class="ribbons"><span>Administração</span></div>';
-                                    } else if(result[i].flag == 'morador') {
+                                    } else if(result['rows'][i].flag == 'morador') {
                                         output += '<div class="ribbons morador"><span>Indicado por morador</span></div>';
                                     }
 
-                                    output += '<h3>'+ result[i].nomeprofissional +'</h3>';
-                                    output += '<h4><strong>'+result[i].categoriaprofissional+'</strong></h4>';
-                                    output += '<p><i class="fa fa-whatsapp" aria-hidden="true"></i> <a href="https://api.whatsapp.com/send?phone=55'+result[i].celularprofissional+'&text=Olá, '+result[i].nomeprofissional+'!%20Peguei%20seu%20contato%20no%20Me%20Indica%20Aê,%20e%20eu%20gostaria%20de%20fazer%20um%20orçamento%20com%20você." target="_blank">'+ result[i].celularprofissional +'</a></p>';
-                                    output += '<p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:'+result[i].emailprofissional+'?subject=Me Indica Aê - Solicitação de Orçamento">Enviar email</a></p>';
-                                    output += '<p><i class="fa fa-globe" aria-hidden="true"></i> <a href='+ result[i].siteprofissional +' target="_blank">Acessar o site</a></p>';
+                                    output += '<h3>'+ result['rows'][i].nomeprofissional +'</h3>';
+                                    output += '<h4><strong>'+result['rows'][i].categoriaprofissional+'</strong></h4>';
+                                    output += '<p><i class="fa fa-whatsapp" aria-hidden="true"></i> <a href="https://api.whatsapp.com/send?phone=55'+replaceContact+'&text=Olá, '+result['rows'][i].nomeprofissional+'!%20Peguei%20seu%20contato%20no%20Me%20Indica%20Aê,%20e%20eu%20gostaria%20de%20fazer%20um%20orçamento%20com%20você." target="_blank">'+ result['rows'][i].celularprofissional +'</a></p>';
+                                    output += '<p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:'+result['rows'][i].emailprofissional+'?subject=Me Indica Aê - Solicitação de Orçamento">Enviar email</a></p>';
+                                    output += '<p><i class="fa fa-globe" aria-hidden="true"></i> <a href='+ result['rows'][i].siteprofissional +' target="_blank">Acessar o site</a></p>';
                                     output += '<hr>';
                                     
-                                    if(result[i].nomemorador == 'Admin' || result[i].flag == 'admin') {
-                                        output += '<p class="quemindicou"><small><strong>De: </strong><em>Admin</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
-                                    } else if(result[i].flag == 'morador') {
-                                        output += '<p class="quemindicou"><small><strong>De: </strong><em>'+ result[i].nomemorador +'</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
+                                    if(result['rows'][i].nomemorador == 'Admin' || result['rows'][i].flag == 'admin') {
+                                        output += '<p class="quemindicou"><small><strong>De: </strong><em>Admin</em> em '+ new Date(result['rows'][i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
+                                    } else if(result['rows'][i].flag == 'morador') {
+                                        output += '<p class="quemindicou"><small><strong>De: </strong><em>'+ result['rows'][i].nomemorador +'</em> em '+ new Date(result['rows'][i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
                                     }
 
-                                    output += '<p class="comentario">'+ '<i class="fa fa-quote-left mr-2" aria-hidden="true"></i> ' + result[i].indicandoprofissional + '</p>';
+                                    output += '<p class="comentario">'+ '<i class="fa fa-quote-left mr-2" aria-hidden="true"></i> ' + result['rows'][i].indicandoprofissional + '</p>';
                                     
                                     output += '<hr>';
-                                    output += '<p class="relatar-problema"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <strong><a href="/relatar-problema.html">Relatar um problema</a></strong></p>';
+                                    output += '<p class="relatar-problema"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <strong><a href="/relatar-problema.html?p=' + replaceContact + '">Relatar um problema</a></strong></p>';
 
                                     output += '</div>';
                                 }
@@ -297,39 +303,41 @@ var getProfissionaisJSON = {
         
         $.ajax({
             type: "GET",
-            url: "https://opensheet.elk.sh/1f-Cq5gpr03s6C0NZGdJH42LLFVp7UVn2YhSBQIdD7Po/1",
+            url: "https://gsx2json.com/api?id=1f-Cq5gpr03s6C0NZGdJH42LLFVp7UVn2YhSBQIdD7Po&sheet=Profissionais&columns=false",
             success: function(result) {
                 
-                // console.log(result);
+                // console.log(result['rows']);
                 var verifica = 0;
                 var output = '';
                 var nomeCondominio = getCookie("nomecondominio");
 
-                result.reverse();
+                result['rows'].reverse();
 
-                for (var i in result) {
-                    if(result[i].nomecondominio == nomeCondominio && result[i].blacklist == 1) {
+                for (var i in result['rows']) {
+                    if(result['rows'][i].nomecondominio == nomeCondominio && result['rows'][i].blacklist == 1) {
 
                         var verifica = 1;
 
-                        output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
-                        output += '<h3>'+ result[i].nomeprofissional +'</h3>';
-                        output += '<h4><strong>'+result[i].categoriaprofissional+'</strong></h4>';
-                        output += '<p><i class="fa fa-whatsapp" aria-hidden="true"></i> '+ result[i].celularprofissional.replace(/(?<=\d{2})\d/g, '*') +'</p>';
+                        var replaceContact = result['rows'][i].celularprofissional.replace(/([^\w ]|-)/g, '').replaceAll(' ', '');
 
-                        if(result[i].emailprofissional != '') {
-                            output += '<p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:'+result[i].emailprofissional+'?subject=Me Indica Aê - Solicitação de Orçamento">Enviar email</a></p>';
+                        output += '<div class="col-lg-12 col-md-12 col-sm-12 col-12">';
+                        output += '<h3>'+ result['rows'][i].nomeprofissional +'</h3>';
+                        output += '<h4><strong>'+result['rows'][i].categoriaprofissional+'</strong></h4>';
+                        output += '<p><i class="fa fa-whatsapp" aria-hidden="true"></i> '+ result['rows'][i].celularprofissional.replace(/(?<=\d{2})\d/g, '*') +'</p>';
+
+                        if(result['rows'][i].emailprofissional != '') {
+                            output += '<p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:'+result['rows'][i].emailprofissional+'?subject=Me Indica Aê - Solicitação de Orçamento">Enviar email</a></p>';
                         }
                         
-                        if(result[i].siteprofissional != '') {
-                            output += '<p class="siteprofissional"><i class="fa fa-globe" aria-hidden="true"></i> <a href='+ result[i].siteprofissional +' target="_blank"> Acessar o site </a></p>';
+                        if(result['rows'][i].siteprofissional != '') {
+                            output += '<p class="siteprofissional"><i class="fa fa-globe" aria-hidden="true"></i> <a href='+ result['rows'][i].siteprofissional +' target="_blank"> Acessar o site </a></p>';
                         }
                         
                         output += '<hr>';
-                        output += '<p class="quemindicou"><small><strong>Por: </strong><em>Anônimo</em> em '+ new Date(result[i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
+                        output += '<p class="quemindicou"><small><strong>Por: </strong><em>Anônimo</em> em '+ new Date(result['rows'][i].datacadastro).toLocaleString('pt-BR') +'</small></p>';
                         
                         output += '<hr>';
-                        output += '<p class="relatar-problema"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <strong><a href="/relatar-problema.html">Relatar um problema</a></strong></p>';
+                        output += '<p class="relatar-problema"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <strong><a href="/relatar-problema.html?p=' + replaceContact + '">Relatar um problema</a></strong></p>';
                         
                         output += '</div>';
                     }
@@ -346,6 +354,10 @@ var getProfissionaisJSON = {
             }
         });
 
+    },
+    teste: function() {
+        var getParameter = new URL(location.href).searchParams.get('p');
+        console.log(getParameter);
     }
 };
 getProfissionaisJSON.init();
